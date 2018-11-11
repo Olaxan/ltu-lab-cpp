@@ -8,9 +8,10 @@ using namespace std;
 
 namespace efiilj {
 
-	int IOUtils::askInt(std::string prompt, std::string error, char exit) {
+	int IOUtils::askInt(std::string prompt, std::string error, int min, int max, char exit) {
 
 		string input;
+		int test;
 
 		while (true) {
 
@@ -22,18 +23,27 @@ namespace efiilj {
 			}
 			
 			if (isdigit(input[0])) {
-				return stoi(input);
+				test = stoi(input);
+				if (test > min && test < max) {
+					return test;
+				}
 			}
-			else {
-				cout << error << endl;
-			}
+
+			cout << error << endl;
+
 		}
 	}
 
+	int IOUtils::askInt(std::string prompt, std::string error, int min, int max) {
+		return IOUtils::askInt(prompt, error, min, max, '\0');
+	}
+
+	int IOUtils::askInt(std::string prompt, std::string error, char exit) {
+		return IOUtils::askInt(prompt, error, INT_MIN, INT_MAX, exit);
+	}
+
 	int IOUtils::askInt(std::string prompt, std::string error) {
-
-		return IOUtils::askInt(prompt, error, '\0');
-
+		return IOUtils::askInt(prompt, error, INT_MIN, INT_MAX, '\0');
 	}
 
 	int MathUtils::neg(int n) {
