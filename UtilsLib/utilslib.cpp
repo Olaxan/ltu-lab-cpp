@@ -11,7 +11,6 @@ namespace efiilj {
 	int IOUtils::askInt(std::string prompt, std::string error, char exit) {
 
 		string input;
-		int num;
 
 		while (true) {
 
@@ -21,14 +20,11 @@ namespace efiilj {
 			if (input.length() == 1 && input[0] == exit) {
 				return 0;
 			}
-
-			try
-			{
-				num = stoi(input);
-				return num;
+			
+			if (isdigit(input[0])) {
+				return stoi(input);
 			}
-			catch (const std::invalid_argument)
-			{
+			else {
 				cout << error << endl;
 			}
 		}
