@@ -7,6 +7,7 @@
 using namespace std;
 
 namespace efiilj {
+
 	int IOUtils::askInt(std::string prompt, std::string error, char exit) {
 
 		string input;
@@ -37,5 +38,9 @@ namespace efiilj {
 
 		return IOUtils::askInt(prompt, error, '\0');
 
+	}
+
+	int MathUtils::neg(int n) {
+		return -abs(n);
 	}
 }

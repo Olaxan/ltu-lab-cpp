@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B887EEED-A246-4353-92B3-4CC95CCD1661}</ProjectGuid>
+    <ProjectGuid>{55ADF671-D5A4-4303-A501-D6562E5331BB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Bounce</RootNamespace>
+    <RootNamespace>Pyramid</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -152,7 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bounce.cpp" />
+    <ClCompile Include="pyramid.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UtilsLib\UtilsLib.vcxproj">

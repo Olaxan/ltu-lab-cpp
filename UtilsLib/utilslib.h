@@ -8,4 +8,9 @@ namespace efiilj {
 		static int askInt(std::string prompt, std::string error);
 		static int askInt(std::string prompt, std::string error, char exit);
 	};
+
+	class MathUtils {
+	public:
+		static int neg(int n);
+	};
 }
