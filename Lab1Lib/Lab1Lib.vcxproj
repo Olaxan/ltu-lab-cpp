@@ -152,10 +152,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="lab1lib.h" />
+    <ClInclude Include="matrix.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Arrays\matrix.cpp" />
-    <ClCompile Include="lab1lib.cpp" />
+    <ClCompile Include="arrays.cpp" />
+    <ClCompile Include="bounce.cpp" />
+    <ClCompile Include="cake.cpp" />
+    <ClCompile Include="helloWorld.cpp" />
+    <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="mortgage.cpp" />
+    <ClCompile Include="prime.cpp" />
+    <ClCompile Include="pyramid.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UtilsLib\UtilsLib.vcxproj">

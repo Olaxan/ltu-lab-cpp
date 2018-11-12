@@ -47,7 +47,7 @@ namespace efiilj {
 	}
 
 	int IOUtils::showMenu(std::string* items, std::string prompt, std::string error, bool showExit) {
-
+		return 0;
 	}
 
 	int MathUtils::neg(int n) {
