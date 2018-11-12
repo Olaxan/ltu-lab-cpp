@@ -2,6 +2,7 @@
 #include <string>
 
 namespace efiilj {
+
 	class IOUtils {
 	public:
 		// Asks the user for an integer until one is input.
@@ -15,4 +16,5 @@ namespace efiilj {
 	public:
 		static int neg(int n);
 	};
+
 }

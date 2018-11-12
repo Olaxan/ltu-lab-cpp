@@ -1,7 +1,7 @@
 ﻿// prime.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
 #include "pch.h"
-#include "utilslib.h"
+#include "..\UtilsLib\utilslib.h"
 
 #include <iostream>
 #include <math.h>
