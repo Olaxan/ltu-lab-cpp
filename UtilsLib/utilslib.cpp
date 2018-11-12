@@ -46,6 +46,10 @@ namespace efiilj {
 		return IOUtils::askInt(prompt, error, INT_MIN, INT_MAX, '\0');
 	}
 
+	int IOUtils::showMenu(std::string* items, std::string prompt, std::string error, bool showExit) {
+
+	}
+
 	int MathUtils::neg(int n) {
 		return -abs(n);
 	}

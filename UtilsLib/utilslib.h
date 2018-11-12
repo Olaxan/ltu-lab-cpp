@@ -10,6 +10,8 @@ namespace efiilj {
 		static int askInt(std::string prompt, std::string error, char exit);
 		static int askInt(std::string prompt, std::string error, int min, int max);
 		static int askInt(std::string prompt, std::string error, int min, int max, char exit);
+
+		static int showMenu(std::string* items, std::string prompt, std::string error, bool showExit);
 	};
 
 	class MathUtils {
