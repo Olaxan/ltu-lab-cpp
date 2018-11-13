@@ -8,8 +8,8 @@ int main(){
 
 	float a, b;
 
-	efiilj::IOUtils::get<float>(a, "a: ");
-	efiilj::IOUtils::get<float>(b, "b: ");
+	efiilj::IOUtils::getNum<float>(a, "a: ");
+	efiilj::IOUtils::getNum<float>(b, "b: ");
 
 	efiilj::GenUtils::swap(a, b);
 
