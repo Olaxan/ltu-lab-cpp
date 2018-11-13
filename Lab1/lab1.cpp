@@ -19,7 +19,7 @@ int main() {
 			"6. Mortgage Calculator\n"
 			"0. Exit\n");
 
-		select = efiilj::IOUtils::askInt("> ", "Please select a number between 0-6", 0, 6);
+		select = efiilj::IOUtils::getInt("> ", "Please select a number between 0-6", 0, 6);
 
 		switch (select) {
 		case 0:
@@ -29,14 +29,14 @@ int main() {
 		case 1:
 			printf("How many primes do you want to calculate?\nThis operation may take a very long time to complete for large numbers.\n");
 			efiilj::Lab1::prime(
-				efiilj::IOUtils::askInt()
+				efiilj::IOUtils::getInt()
 			);
 			break;
 
 		case 2:
 			printf("How many numbers do you want to bounce?\n");
 			efiilj::Lab1::bounce(
-				efiilj::IOUtils::askInt()
+				efiilj::IOUtils::getInt()
 			);
 			break;
 
@@ -53,15 +53,15 @@ int main() {
 
 		case 4:
 			efiilj::Lab1::arrays(
-				efiilj::IOUtils::askInt("Enter X dimension: "),
-				efiilj::IOUtils::askInt("Enter Y dimension: ")
+				efiilj::IOUtils::getInt("Enter X dimension: "),
+				efiilj::IOUtils::getInt("Enter Y dimension: ")
 			);
 			break;
 
 		case 5:
 			printf("How many people do you want to feed?\n");
 			efiilj::Lab1::cake(
-				efiilj::IOUtils::askInt()
+				efiilj::IOUtils::getInt()
 			);
 			break;
 
@@ -70,9 +70,9 @@ int main() {
 
 			printf("Please enter the following information about your loan:\nAmount borrowed, loan interest, and years to repay.\n");
 
-			amount = efiilj::IOUtils::askInt("AMOUNT: ");
-			interest = efiilj::IOUtils::askInt("INTEREST [0 - 100]: ");
-			years = efiilj::IOUtils::askInt("YEARS: ");
+			amount = efiilj::IOUtils::getInt("AMOUNT: ");
+			interest = efiilj::IOUtils::getInt("INTEREST [0 - 100]: ");
+			years = efiilj::IOUtils::getInt("YEARS: ");
 
 			efiilj::Lab1::cost(amount, interest, years);
 			break;
