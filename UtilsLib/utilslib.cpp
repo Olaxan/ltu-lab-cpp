@@ -24,7 +24,7 @@ namespace efiilj {
 			
 			if (isdigit(input[0])) {
 				test = stoi(input);
-				if (test > min && test < max) {
+				if (test >= min && test <= max) {
 					return test;
 				}
 			}
@@ -46,8 +46,12 @@ namespace efiilj {
 		return IOUtils::askInt(prompt, error, INT_MIN, INT_MAX, '\0');
 	}
 
-	int IOUtils::showMenu(std::string* items, std::string prompt, std::string error, bool showExit) {
+	int IOUtils::askInt(std::string prompt) {
+		return IOUtils::askInt(prompt, "Please enter an integer", INT_MIN, INT_MAX, '\0');
+	}
 
+	int IOUtils::askInt() {
+		return IOUtils::askInt("> ", "Please enter an integer", INT_MIN, INT_MAX, '\0');
 	}
 
 	int MathUtils::neg(int n) {
