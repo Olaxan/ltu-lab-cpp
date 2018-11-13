@@ -41,6 +41,8 @@ int main() {
 
 			printf("Enter the character/number you want in the last row of the pyramid.\n> ");
 			scanf_s(" %c", &c);
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
 			if (isdigit(c))
 				efiilj::Lab1::pyramid(c - '0');
 			else
