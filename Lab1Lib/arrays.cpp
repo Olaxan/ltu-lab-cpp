@@ -23,7 +23,7 @@ namespace efiilj{
 			printf("%i\t", mat.getColSum(x));
 		}
 
-		printf("%i", mat.getSum());
+		printf("%i\n", mat.getSum());
 	}
 
 }

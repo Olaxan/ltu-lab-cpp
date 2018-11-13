@@ -8,6 +8,7 @@ using namespace std;
 namespace efiilj {
 
 	void Lab1::cake(int people) {
+		printf("Sponge cake for %i people:\n", people);
 		printf("%i eggs\n", (int)ceil((3.0f / 4.0f) * people));
 		printf("%g dl sugar\n", (3.0f / 4.0f) * people);
 		printf("%g tsp vanilla extract\n", (2.0f / 4.0f) * people);
