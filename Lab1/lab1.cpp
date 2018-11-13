@@ -5,39 +5,35 @@
 
 int main() {
 
-	bool run = true;
 	int select;
 
-	do
-	{
-		printf("Assignment 1 menu:\n\n"
-			"1. Primes\n"
-			"2. Bounce\n"
-			"3. Pyramid\n"
-			"4. Arrays\n"
-			"5. Arithmetic and Output\n"
-			"6. Mortgage Calculator\n"
-			"0. Exit\n");
+	printf("ASSIGNMENT 1 menu:\n\n"
+		"1. Primes\n"
+		"2. Bounce\n"
+		"3. Pyramid\n"
+		"4. Arrays\n"
+		"5. Arithmetic and Output\n"
+		"6. Mortgage Calculator\n"
+		"0. Exit\n");
 
-		select = efiilj::IOUtils::getInt("> ", "Please select a number between 0-6", 0, 6);
+	while (efiilj::IOUtils::get<int>(select, "> ", "Please select an integer between 0-6", 1, 6, '0'))
+	{
 
 		switch (select) {
-		case 0:
-			run = false;
-			break;
-
 		case 1:
+			int p;
+
 			printf("How many primes do you want to calculate?\nThis operation may take a very long time to complete for large numbers.\n");
-			efiilj::Lab1::prime(
-				efiilj::IOUtils::getInt()
-			);
+			if (efiilj::IOUtils::get<int>(p), '0')
+				efiilj::Lab1::prime(p);
 			break;
 
 		case 2:
+			int b;
+
 			printf("How many numbers do you want to bounce?\n");
-			efiilj::Lab1::bounce(
-				efiilj::IOUtils::getInt()
-			);
+			if (efiilj::IOUtils::get<int>(b), '0')
+				efiilj::Lab1::bounce(b);
 			break;
 
 		case 3:
@@ -52,27 +48,28 @@ int main() {
 			break;
 
 		case 4:
-			efiilj::Lab1::arrays(
-				efiilj::IOUtils::getInt("Enter X dimension: "),
-				efiilj::IOUtils::getInt("Enter Y dimension: ")
-			);
+			int x, y;
+
+			if (efiilj::IOUtils::get<int>(x, "Enter X dimension: ") && efiilj::IOUtils::get<int>(y, "Enter Y dimension: "))
+				efiilj::Lab1::arrays(x, y);
 			break;
 
 		case 5:
+			int f;
+
 			printf("How many people do you want to feed?\n");
-			efiilj::Lab1::cake(
-				efiilj::IOUtils::getInt()
-			);
+			if (efiilj::IOUtils::get<int>(f))
+				efiilj::Lab1::cake(f);
 			break;
 
 		case 6:
-			int amount, interest, years;
+			float amount, interest, years;
 
 			printf("Please enter the following information about your loan:\nAmount borrowed, loan interest, and years to repay.\n");
 
-			amount = efiilj::IOUtils::getInt("AMOUNT: ");
-			interest = efiilj::IOUtils::getInt("INTEREST [0 - 100]: ");
-			years = efiilj::IOUtils::getInt("YEARS: ");
+			efiilj::IOUtils::get<float>(amount, "AMOUNT: ");
+			efiilj::IOUtils::get<float>(interest, "INTEREST [0 - 1]: ");
+			efiilj::IOUtils::get<float>(years, "YEARS: ");
 
 			efiilj::Lab1::cost(amount, interest, years);
 			break;
@@ -81,7 +78,7 @@ int main() {
 
 		printf("\n");
 
-	} while (run);
+	}
 
 	
 }

@@ -13,10 +13,10 @@ namespace efiilj {
 
 			for (int j = 1; j <= i; j++)
 			{
-				printf_s("%i", j);
+				printf("%i", j);
 			}
 
-			printf_s("\n");
+			printf("\n");
 
 		}
 	}
@@ -24,11 +24,10 @@ namespace efiilj {
 	void Lab1::pyramid(char c) {
 
 		for (int i = 0; i <= (toupper(c) - 'A'); i++) {
-			printf_s(string(i + 1, 'A' + i).c_str());
-			printf_s("\n");
+			printf(string(i + 1, 'A' + i).c_str());
+			printf("\n");
 		}
 
 	}
-
 }
 
