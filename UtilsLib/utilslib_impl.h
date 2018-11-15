@@ -18,7 +18,7 @@ namespace efiilj {
 	}
 
 	template <typename T>
-	bool IOUtils::getNum(T &out, std::string prompt, std::string error, int min, int max, char exit) {
+	bool IOUtils::getNum(T &out, char exit, std::string prompt, std::string error, int min, int max) {
 
 		static_assert(std::is_arithmetic<T>::value, "Type must be arithmetic");
 
@@ -54,29 +54,7 @@ namespace efiilj {
 	}
 
 	template <typename T>
-	bool IOUtils::getNum(T &out, std::string prompt, std::string error, char exit) {
-		return IOUtils::getNum(out, prompt, error, INT_MIN, INT_MAX, exit);
+	bool IOUtils::getNum(T &out, std::string prompt, std::string error, int min, int max) {
+		return IOUtils::getNum(out, '\0', prompt, error, min, max);
 	}
-
-	template <typename T>
-	bool IOUtils::getNum(T &out, std::string prompt, char exit) {
-		stringstream ss;
-		ss << "Invalid input - " << typeid(T).name() << " expected.";
-		return IOUtils::getNum(out, prompt, ss.str(), INT_MIN, INT_MAX, exit);
-	}
-
-	template <typename T>
-	bool IOUtils::getNum(T &out, char exit) {
-		stringstream ss;
-		ss << "Invalid input - " << typeid(T).name() << " expected.";
-		return IOUtils::getNum(out, "> ", ss.str(), INT_MIN, INT_MAX, exit);
-	}
-
-	template <typename T>
-	bool IOUtils::getNum(T &out) {
-		stringstream ss;
-		ss << "Invalid input - " << typeid(T).name() << " expected.";
-		return IOUtils::getNum(out, "> ", ss.str(), INT_MIN, INT_MAX, '\0');
-	}
-
 }

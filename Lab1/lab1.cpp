@@ -16,7 +16,7 @@ int main() {
 		"6. Mortgage Calculator\n"
 		"0. Exit\n");
 
-	while (efiilj::IOUtils::getNum<int>(select, "> ", "Please enter 0-6.", 0, 6, '0'))
+	while (efiilj::IOUtils::getNum<int>(select, '0', "> ", "Please enter 0-6.", 0, 6))
 	{
 
 		switch (select) {
@@ -52,7 +52,7 @@ int main() {
 		case 4:
 			int x, y;
 
-			if (efiilj::IOUtils::getNum<int>(x, "Enter X dimension: ", '0') && efiilj::IOUtils::getNum<int>(y, "Enter Y dimension: ", '0'))
+			if (efiilj::IOUtils::getNum<int>(x, '0', "Enter X dimension: ") && efiilj::IOUtils::getNum<int>(y, '0', "Enter Y dimension: "))
 				efiilj::Lab1::arrays(x, y);
 			break;
 
@@ -69,11 +69,11 @@ int main() {
 
 			printf("Please enter the following information about your loan:\nAmount borrowed, loan interest, and years to repay.\n");
 
-			efiilj::IOUtils::getNum<float>(amount, "AMOUNT: ");
-			efiilj::IOUtils::getNum<float>(interest, "INTEREST [0 - 1]: ");
-			efiilj::IOUtils::getNum<float>(years, "YEARS: ");
-
-			efiilj::Lab1::cost(amount, interest, years);
+			if (efiilj::IOUtils::getNum<float>(amount, "AMOUNT: ")
+				&& efiilj::IOUtils::getNum<float>(interest, "INTEREST [0 - 1]: ")
+				&& efiilj::IOUtils::getNum<float>(years, "YEARS: ")
+			)
+				efiilj::Lab1::cost(amount, interest, years);
 			break;
 
 		default:
