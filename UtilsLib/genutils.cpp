@@ -10,12 +10,11 @@ namespace efiilj {
 
 	vector<string> GenUtils::split(string &input) {
 
-		vector<string> split;
+		return split(input, " \t\n\v\f\r");
 
-		return split;
 	}
 
-	vector<string> GenUtils::split(char splitter, string &input) {
+	vector<string> GenUtils::split(string &input, string splitter) {
 
 		int index;
 		vector<string> split;
@@ -24,14 +23,20 @@ namespace efiilj {
 
 			index = input.find_first_of(splitter);
 			if (index != string::npos) {
-				split.push_back(input.substr(0, index));
-				input.erase(0, index);
-			}
+				string sub = input.substr(0, index);
 
-			return split;
-		
+				if (!isspace(sub[0]))
+					split.push_back(sub);
+
+				input.erase(0, index + 1);
+			}
+			else {
+				split.push_back(input);
+				break;
+			}
 		}
 
+		return split;
 	}
 
 }

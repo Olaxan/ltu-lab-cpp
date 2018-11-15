@@ -26,7 +26,7 @@ namespace efiilj {
 		static void swap(T &a, T &b);
 
 		static std::vector<std::string> split(std::string &input);
-		static std::vector<std::string> split(char splitter, std::string &input);
+		static std::vector<std::string> split(std::string &input, std::string splitter);
 	};
 
 }
