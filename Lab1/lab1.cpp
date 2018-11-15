@@ -20,69 +20,70 @@ int main() {
 	{
 
 		switch (select) {
-		case 1:
-			int p;
+			case 1:
+			{
+				int p;
 
-			printf("How many primes do you want to calculate?\nThis operation may take a very long time to complete for large numbers.\n");
-			if (efiilj::IOUtils::getNum<int>(p, '0'))
-				efiilj::Lab1::prime(p);
-			break;
+				printf("How many primes do you want to calculate?\nThis operation may take a very long time to complete for large numbers.\n");
+				if (efiilj::IOUtils::getNum<int>(p, '0'))
+					efiilj::Lab1::prime(p);
+			}
+			case 2:
+			{
+				int b;
 
-		case 2:
-			int b;
+				printf("How many numbers do you want to bounce?\n");
+				if (efiilj::IOUtils::getNum<int>(b, '0'))
+					efiilj::Lab1::bounce(b);
+			}
+			case 3:
+			{
+				char c;
 
-			printf("How many numbers do you want to bounce?\n");
-			if (efiilj::IOUtils::getNum<int>(b, '0'))
-				efiilj::Lab1::bounce(b);
-			break;
+				printf("Enter the character/number you want in the last row of the pyramid.\n> ");
+				scanf_s(" %c", &c);
+				cin.clear();
+				cin.ignore(INT_MAX, '\n');
+				if (isdigit(c))
+					efiilj::Lab1::pyramid(c - '0');
+				else
+					efiilj::Lab1::pyramid(c);
+				break;
+			}
+			case 4:
+			{
+				int x, y;
 
-		case 3:
-			char c;
+				if (efiilj::IOUtils::getNum<int>(x, '0', "Enter X dimension: ") && efiilj::IOUtils::getNum<int>(y, '0', "Enter Y dimension: "))
+					efiilj::Lab1::arrays(x, y);
+			}
+			case 5:
+			{
+				int f;
 
-			printf("Enter the character/number you want in the last row of the pyramid.\n> ");
-			scanf_s(" %c", &c);
-			cin.clear();
-			cin.ignore(INT_MAX, '\n');
-			if (isdigit(c))
-				efiilj::Lab1::pyramid(c - '0');
-			else
-				efiilj::Lab1::pyramid(c);
-			break;
+				printf("How many people do you want to feed?\n");
+				if (efiilj::IOUtils::getNum<int>(f))
+					efiilj::Lab1::cake(f);
+			}
+			case 6:
+			{
+				float amount, interest, years;
 
-		case 4:
-			int x, y;
+				printf("Please enter the following information about your loan:\nAmount borrowed, loan interest, and years to repay.\n");
 
-			if (efiilj::IOUtils::getNum<int>(x, '0', "Enter X dimension: ") && efiilj::IOUtils::getNum<int>(y, '0', "Enter Y dimension: "))
-				efiilj::Lab1::arrays(x, y);
-			break;
-
-		case 5:
-			int f;
-
-			printf("How many people do you want to feed?\n");
-			if (efiilj::IOUtils::getNum<int>(f))
-				efiilj::Lab1::cake(f);
-			break;
-
-		case 6:
-			float amount, interest, years;
-
-			printf("Please enter the following information about your loan:\nAmount borrowed, loan interest, and years to repay.\n");
-
-			if (efiilj::IOUtils::getNum<float>(amount, "AMOUNT: ")
-				&& efiilj::IOUtils::getNum<float>(interest, "INTEREST [0 - 1]: ")
-				&& efiilj::IOUtils::getNum<float>(years, "YEARS: ")
-			)
-				efiilj::Lab1::cost(amount, interest, years);
-			break;
-
-		default:
-			printf("Please select an item 0-6.");
+				if (efiilj::IOUtils::getNum<float>(amount, "AMOUNT: ")
+					&& efiilj::IOUtils::getNum<float>(interest, "INTEREST [0 - 1]: ")
+					&& efiilj::IOUtils::getNum<float>(years, "YEARS: ")
+					)
+					efiilj::Lab1::cost(amount, interest, years);
+			}
+			default:
+			{
+				printf("Please select an item 0-6.");
+			}
 		}
 
 		printf("\n");
 
 	}
-
-	
 }

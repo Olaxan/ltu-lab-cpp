@@ -1,4 +1,6 @@
 #pragma once
+
+#include <vector>
 #include <string>
 
 namespace efiilj {
@@ -22,9 +24,12 @@ namespace efiilj {
 	public:
 		template <typename T>
 		static void swap(T &a, T &b);
+
+		static std::vector<std::string> split(std::string &input);
+		static std::vector<std::string> split(char splitter, std::string &input);
 	};
 
 }
 
 #include "utilslib_impl.h"
-//Implementation file for generics
+//Implementation file for template functions.

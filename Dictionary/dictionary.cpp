@@ -17,7 +17,7 @@ int main() {
 		"0. Exit\n"
 	);
 
-	while (efiilj::IOUtils::getNum<int>(select, "> ", "Please select a valid option.", '0')) {
+	while (efiilj::IOUtils::getNum<int>(select, '0')) {
 
 		switch (select) {
 		case 1:

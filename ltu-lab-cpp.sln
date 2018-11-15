@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SwapNumbers", "SwapNumbers\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dictionary", "Dictionary\Dictionary.vcxproj", "{F82E99FA-2251-4DE6-959B-0440EF467DE9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Phonebook", "Phonebook\Phonebook.vcxproj", "{56841C07-6836-4BAE-9AEA-F97F44230954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -63,6 +65,14 @@ Global
 		{F82E99FA-2251-4DE6-959B-0440EF467DE9}.Release|x64.Build.0 = Release|x64
 		{F82E99FA-2251-4DE6-959B-0440EF467DE9}.Release|x86.ActiveCfg = Release|Win32
 		{F82E99FA-2251-4DE6-959B-0440EF467DE9}.Release|x86.Build.0 = Release|Win32
+		{56841C07-6836-4BAE-9AEA-F97F44230954}.Debug|x64.ActiveCfg = Debug|x64
+		{56841C07-6836-4BAE-9AEA-F97F44230954}.Debug|x64.Build.0 = Debug|x64
+		{56841C07-6836-4BAE-9AEA-F97F44230954}.Debug|x86.ActiveCfg = Debug|Win32
+		{56841C07-6836-4BAE-9AEA-F97F44230954}.Debug|x86.Build.0 = Debug|Win32
+		{56841C07-6836-4BAE-9AEA-F97F44230954}.Release|x64.ActiveCfg = Release|x64
+		{56841C07-6836-4BAE-9AEA-F97F44230954}.Release|x64.Build.0 = Release|x64
+		{56841C07-6836-4BAE-9AEA-F97F44230954}.Release|x86.ActiveCfg = Release|Win32
+		{56841C07-6836-4BAE-9AEA-F97F44230954}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +82,7 @@ Global
 		{B07E8C45-26D0-4558-BD87-FC47D9A178D5} = {9055F421-9412-42A4-B4F3-1B7D7D9E6DB4}
 		{6B04EBC7-79F1-4253-949B-98947A370506} = {9055F421-9412-42A4-B4F3-1B7D7D9E6DB4}
 		{F82E99FA-2251-4DE6-959B-0440EF467DE9} = {9055F421-9412-42A4-B4F3-1B7D7D9E6DB4}
+		{56841C07-6836-4BAE-9AEA-F97F44230954} = {9055F421-9412-42A4-B4F3-1B7D7D9E6DB4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C95AF0B5-A42C-45B0-9D3D-1DAC1C171295}
