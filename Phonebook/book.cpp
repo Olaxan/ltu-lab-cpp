@@ -1,4 +1,5 @@
 #include "book.h"
+#include "user.h"
 
 #include <string>
 
@@ -12,14 +13,14 @@ namespace efiilj {
 	}
 
 	bool PhoneBook::findUser(string name) {
-		auto it = this->items.find(name);
-		return (it != this->items.end());
+		auto it = this->users.find(name);
+		return (it != this->users.end());
 	}
 
 	bool PhoneBook::findUser(string name, string &number) {
-		auto it = this->items.find(name);
-		if (it != this->items.end()) {
-			number = items[name];
+		auto it = this->users.find(name);
+		if (it != this->users.end()) {
+			number = users[name]->number;
 			return true;
 		}
 		else
@@ -27,8 +28,9 @@ namespace efiilj {
 	}
 
 	bool PhoneBook::addUser(string name, string number) {
+
 		if (!this->findUser(name)) {
-			this->items[name] = number;
+			this->users[name] = new efiilj::User(name, number);
 			return true;
 		}
 		else
@@ -38,7 +40,7 @@ namespace efiilj {
 
 	bool PhoneBook::changeUser(string name, string number) {
 		if (this->findUser(name)) {
-			this->items[name] = number;
+			this->users[name]->number = number;
 			return true;
 		}
 		else
@@ -47,7 +49,7 @@ namespace efiilj {
 
 	bool PhoneBook::addAlias(string name, string alias) {
 		if (this->findUser(name)) {
-			this->items[alias] = this->items[name];
+			this->users[alias] = this->users[name];
 			return true;
 		}
 		else

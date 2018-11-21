@@ -28,6 +28,12 @@ namespace efiilj {
 		static std::vector<std::string> split(std::string input, std::string splitter = " \t\n\v\f\r");
 	};
 
+	class ToddUtils{
+	public:
+		static std::string todd;
+		static void createTodd();
+	};
+
 }
 
 #include "utilslib_impl.h"

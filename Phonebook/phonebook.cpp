@@ -5,9 +5,12 @@
 #include <vector>
 #include "book.h"
 
-constexpr auto ERR_ARG_NUM = "Invalid number of arguments.";
-
 using namespace std;
+
+const string ERR_ARG = "Invalid command.";
+const string ERR_ARG_NUM = "Invalid number of arguments.";
+const string STR_BANNER = "TeleFun Catalogue System 1.0\nEnter 'help' or '?' for a list of commands.";
+const string STR_HELP = "Command syntax:\n - add <name> <number>\n - lookup <name>\n - change <name> <number>\n - alias <name> <alias>\n - todd\n - quit";
 
 int main() {
 
@@ -15,11 +18,20 @@ int main() {
 	vector<string> items;
 	efiilj::PhoneBook book = efiilj::PhoneBook("Default");
 
-	while (getline(cin, input)) {
+	cout << STR_BANNER << endl;
+
+	while (cout << "> " && getline(cin, input)) {
 
 		items = efiilj::GenUtils::split(input);
 
 		if (items.size()) {
+
+			items[0][0] = tolower(items[0][0]);
+
+			if (items.size() > 1)
+				items[1][0] = toupper(items[1][0]);
+			if (items.size() > 2)
+				items[2][0] = toupper(items[2][0]);
 
 			if (items[0] == "add") {
 
@@ -39,9 +51,9 @@ int main() {
 
 				if (items.size() == 2) {
 					if (book.findUser(items[1], number))
-						cout << "User " << items[1] << " has number " << number;
+						cout << "User " << items[1] << " has number " << number << ".";
 					else
-						cout << "User " << items[1] << " does not exists!";
+						cout << "User " << items[1] << " does not exist!";
 				}
 				else
 					cout << ERR_ARG_NUM;
@@ -71,13 +83,25 @@ int main() {
 					cout << ERR_ARG_NUM;
 
 			}
+			else if (items[0] == "help" || items[0] == "?") {
+
+				cout << STR_HELP;
+
+			}
+			else if (items[0] == "todd" || items[0] == "itjustworks") {
+
+				efiilj::ToddUtils::createTodd();
+
+			}
 			else if (items[0] == "quit") {
 				break;
 			}
+			else
+				cout << ERR_ARG;
 
 		}
 		else
-			cout << "Invalid input.";
+			cout << ERR_ARG;
 
 		cout << endl;
 

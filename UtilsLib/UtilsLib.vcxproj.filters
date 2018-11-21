@@ -32,5 +32,8 @@
     <ClCompile Include="genutils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="toddutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

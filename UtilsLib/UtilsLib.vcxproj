@@ -158,6 +158,7 @@
     <ClCompile Include="genutils.cpp" />
     <ClCompile Include="ioutils.cpp" />
     <ClCompile Include="mathutils.cpp" />
+    <ClCompile Include="toddutils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

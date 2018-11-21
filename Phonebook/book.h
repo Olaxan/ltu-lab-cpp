@@ -1,5 +1,7 @@
 #pragma once
 
+#include "user.h"
+
 #include <string>
 #include <map>
 
@@ -21,7 +23,7 @@ namespace efiilj {
 		~PhoneBook();
 
 	private:
-		std::map<std::string, std::string> items;
+		std::map<std::string, efiilj::User*> users;
 	};
 
 }

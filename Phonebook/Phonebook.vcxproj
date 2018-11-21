@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="book.cpp" />
     <ClCompile Include="phonebook.cpp" />
+    <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UtilsLib\UtilsLib.vcxproj">
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="book.h" />
+    <ClInclude Include="user.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
