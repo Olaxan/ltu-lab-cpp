@@ -29,11 +29,11 @@ int main() {
 		case 1: {
 			string word, def;
 
-			if (cout << "Insert: " && getline(cin, word)) {
+			if (cout << "Insert: " && getline(cin, word) && word.length() > 0) {
 
 				if (!dict->findWord(word)) {
 
-					if (cout << "Define: " && getline(cin, def)) {
+					if (cout << "Define: " && getline(cin, def) && def.length() > 0) {
 						dict->addWord(word, def);
 						cout << "Word '" << word << "' added!";
 					}
@@ -51,7 +51,7 @@ int main() {
 		case 2: {
 			string word, def;
 			
-			if (cout << "Lookup: " && getline(cin, word)) {
+			if (cout << "Lookup: " && getline(cin, word) && word.length() > 0) {
 
 				if (dict->findWord(word, def))
 					cout << word << ": " << def;

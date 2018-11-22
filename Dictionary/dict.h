@@ -14,7 +14,8 @@ namespace efiilj {
 		virtual bool addWord(std::string word, std::string definition) = 0;
 		virtual void list() = 0;
 
-		virtual ~Dict() = 0 { };
+		virtual ~Dict() = 0 { 
+		};
 	};
 
 	class DictMap : public Dict
