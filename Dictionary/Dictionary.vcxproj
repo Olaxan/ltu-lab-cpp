@@ -144,11 +144,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dictionary.cpp" />
+    <ClCompile Include="dictmap.cpp" />
+    <ClCompile Include="dictvector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UtilsLib\UtilsLib.vcxproj">
       <Project>{ef623281-c2a0-4259-81d9-431aaf0a4355}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dict.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

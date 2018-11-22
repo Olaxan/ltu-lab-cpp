@@ -7,8 +7,7 @@ using namespace std;
 
 namespace efiilj {
 
-	PhoneBook::PhoneBook(string name)
-	{
+	PhoneBook::PhoneBook(string name) {
 		this->name = name;
 	}
 
@@ -57,8 +56,8 @@ namespace efiilj {
 	}
 
 
-	PhoneBook::~PhoneBook()
-	{
+	PhoneBook::~PhoneBook() {
+		this->users.clear();
 	}
 
 }
