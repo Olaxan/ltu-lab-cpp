@@ -12,6 +12,8 @@ namespace efiilj {
 		virtual bool findWord(std::string word) = 0;
 		virtual bool findWord(std::string word, std::string &definition) = 0;
 		virtual bool addWord(std::string word, std::string definition) = 0;
+		virtual bool save(std::string path) = 0;
+		virtual bool load(std::string path) = 0;
 		virtual void list() = 0;
 
 		virtual ~Dict() = 0 { 
@@ -26,6 +28,8 @@ namespace efiilj {
 		bool findWord(std::string word);
 		bool findWord(std::string word, std::string &definition);
 		bool addWord(std::string word, std::string definition);
+		bool save(std::string path);
+		bool load(std::string path);
 		void list();
 
 		~DictMap();
@@ -42,6 +46,8 @@ namespace efiilj {
 		bool findWord(std::string word, int &index);
 		bool findWord(std::string word, std::string &definition);
 		bool addWord(std::string word, std::string definition);
+		bool save(std::string path);
+		bool load(std::string path);
 		void list();
 
 		~DictVector();

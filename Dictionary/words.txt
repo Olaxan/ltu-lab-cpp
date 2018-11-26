@@ -1,0 +1,4 @@
+Horse#Long animal.
+Sausage#See: Horse.
+Book#Paper knowledge store.
+Happy#UNDEFINED.

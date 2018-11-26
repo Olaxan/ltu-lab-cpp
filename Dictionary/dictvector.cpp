@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <map>
 
@@ -56,6 +57,41 @@ namespace efiilj {
 
 		if (this->findWord(word, index)) {
 			definition = definitions[index];
+			return true;
+		}
+
+		return false;
+	}
+
+	bool DictVector::save(string path) {
+		ofstream file;
+		file.open(path);
+		if (file.is_open()) {
+			for (int i = 0; i < words.size(); i++) {
+				file << words[i] << "#" << definitions[i] << endl;
+			}
+			file.close();
+			return true;
+		}
+
+		return false;
+
+	}
+
+	bool DictVector::load(string path) {
+		int index;
+		string line;
+		ifstream file(path);
+		if (file.is_open()) {
+			while (getline(file, line))
+			{
+				index = line.find_first_of("#");
+				if (index != string::npos) {
+					this->words.push_back(line.substr(0, index));
+					this->definitions.push_back(line.substr(index + 1, line.size()));
+				}
+			}
+			file.close();
 			return true;
 		}
 

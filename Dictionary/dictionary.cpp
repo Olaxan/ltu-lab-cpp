@@ -6,6 +6,8 @@
 
 using namespace std;
 
+constexpr auto DEFAULT_PATH = "words.txt";
+
 int main() {
 
 	int select;
@@ -16,12 +18,14 @@ int main() {
 	efiilj::DictVector *dict = new efiilj::DictVector();
 	
 	
-	printf("WORD-PAL SUPER DICTIONARY 3000\n"
-		"1. Insert\n"
-		"2. Lookup\n"
-		"3. List\n"
-		"0. Exit\n"
-	);
+	cout << "WORD-PAL SUPER DICTIONARY 3000\n"
+		<< "1. Insert\n"
+		<< "2. Lookup\n"
+		<< "3. List\n"
+		<< "0. Exit\n";
+
+	if (dict->load(DEFAULT_PATH))
+		cout << "\nLoaded words from '" << DEFAULT_PATH << "'!\n";
 
 	while (efiilj::IOUtils::getNum<int>(select, '0')) {
 
@@ -78,5 +82,6 @@ int main() {
 		cout << endl;
 	}
 
+	dict->save(DEFAULT_PATH);
 	delete dict;
 }
