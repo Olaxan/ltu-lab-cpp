@@ -1,4 +1,4 @@
-#include "car.h";
+#include "car.h"
 #include "..\UtilsLib\utilslib.h"
 
 #include <iostream>
@@ -29,7 +29,7 @@ int main() {
 				}
 
 				cout << "\n=== ENGINE SPECIFICATIONS ===\n";
-				if (cout << "Model: " && getline(cin, model) && efiilj::IOUtils::getNum<float>(horsepower, "Horsepower: ") << efiilj::IOUtils::getNum<int>(cylinders, "Cylinders: ")) {
+				if (cout << "Model: " && getline(cin, model) && efiilj::IOUtils::getNum<float>(horsepower, "Horsepower: ") && efiilj::IOUtils::getNum<int>(cylinders, "Cylinders: ")) {
 					efiilj::Engine engine = efiilj::Engine(model, horsepower, cylinders);
 					efiilj::Car car = efiilj::Car(engine, tires, type, owner);
 					cout << "\n=== ORDER SUMMARY ===\n";

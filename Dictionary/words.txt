@@ -1,4 +1,1 @@
-Horse#Long animal.
-Sausage#See: Horse.
-Book#Paper knowledge store.
-Happy#UNDEFINED.
+Cheese#Pasteurized milk turned solid and delicious.
