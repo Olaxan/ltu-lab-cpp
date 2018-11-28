@@ -19,11 +19,20 @@
     <Filter Include="Source Files\_Lab2">
       <UniqueIdentifier>{282ffca3-1f9e-421d-b6a8-396762a6e6ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\_Lab1">
+      <UniqueIdentifier>{bd631f27-18b9-4413-b226-ffebeab19ef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\_Lab2">
+      <UniqueIdentifier>{2e2a3ed0-9957-482f-8805-4a3ee0da5887}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\_Lab3">
+      <UniqueIdentifier>{ebbcc4d6-dba0-4981-9fff-d1b7fa9d81f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\_Lab3">
+      <UniqueIdentifier>{bde25a3e-605d-4e2c-8219-114f32c61943}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="matrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="lablib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -31,16 +40,22 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Lab2\car.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\_Lab2</Filter>
     </ClInclude>
     <ClInclude Include="..\Lab2\engine.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\_Lab2</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
+      <Filter>Header Files\_Lab1</Filter>
     </ClInclude>
     <ClInclude Include="..\Lab2\person.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\_Lab2</Filter>
     </ClInclude>
     <ClInclude Include="..\Lab2\tire.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\_Lab2</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2D.h">
+      <Filter>Header Files\_Lab3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="..\Lab2\person.cpp">
       <Filter>Source Files\_Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="vector2D.cpp">
+      <Filter>Source Files\_Lab3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

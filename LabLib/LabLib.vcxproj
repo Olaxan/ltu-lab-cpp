@@ -159,6 +159,7 @@
     <ClInclude Include="lablib.h" />
     <ClInclude Include="lablib_impl.h" />
     <ClInclude Include="matrix.h" />
+    <ClInclude Include="vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Lab2\car.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="lab1.cpp" />
     <ClCompile Include="lab2.cpp" />
     <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="vector2D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
