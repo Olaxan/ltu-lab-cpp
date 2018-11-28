@@ -1,4 +1,4 @@
-#include "lab2lib.h"
+#include "lablib.h"
 
 namespace efiilj {
 

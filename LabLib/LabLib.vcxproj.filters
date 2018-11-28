@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\_Lab1">
+      <UniqueIdentifier>{6fa519e8-fbfa-4559-8177-84c34b0b5fe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\_Lab2">
+      <UniqueIdentifier>{282ffca3-1f9e-421d-b6a8-396762a6e6ad}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lablib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lablib_impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lab2\car.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lab2\engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lab2\person.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lab2\tire.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lab1.cpp">
+      <Filter>Source Files\_Lab1</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix.cpp">
+      <Filter>Source Files\_Lab1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lab2\tire.cpp">
+      <Filter>Source Files\_Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lab2\car.cpp">
+      <Filter>Source Files\_Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lab2\engine.cpp">
+      <Filter>Source Files\_Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="lab2.cpp">
+      <Filter>Source Files\_Lab2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lab2\person.cpp">
+      <Filter>Source Files\_Lab2</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

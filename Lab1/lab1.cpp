@@ -1,4 +1,4 @@
-#include "..\Lab1Lib\lab1lib.h"
+#include "..\LabLib\lablib.h"
 #include "..\UtilsLib\utilslib.h"
 
 #include <iostream>
@@ -27,6 +27,7 @@ int main() {
 				printf("How many primes do you want to calculate?\nThis operation may take a very long time to complete for large numbers.\n");
 				if (efiilj::IOUtils::getNum<int>(p, '0'))
 					efiilj::Lab1::prime(p);
+				break;
 			}
 			case 2:
 			{
@@ -35,6 +36,7 @@ int main() {
 				printf("How many numbers do you want to bounce?\n");
 				if (efiilj::IOUtils::getNum<int>(b, '0'))
 					efiilj::Lab1::bounce(b);
+				break;
 			}
 			case 3:
 			{
@@ -56,6 +58,7 @@ int main() {
 
 				if (efiilj::IOUtils::getNum<int>(x, '0', "Enter X dimension: ") && efiilj::IOUtils::getNum<int>(y, '0', "Enter Y dimension: "))
 					efiilj::Lab1::arrays(x, y);
+				break;
 			}
 			case 5:
 			{
@@ -64,6 +67,7 @@ int main() {
 				printf("How many people do you want to feed?\n");
 				if (efiilj::IOUtils::getNum<int>(f))
 					efiilj::Lab1::cake(f);
+				break;
 			}
 			case 6:
 			{
@@ -76,10 +80,12 @@ int main() {
 					&& efiilj::IOUtils::getNum<float>(years, "YEARS: ")
 					)
 					efiilj::Lab1::cost(amount, interest, years);
+				break;
 			}
 			default:
 			{
 				printf("Please select an item 0-6.");
+				break;
 			}
 		}
 

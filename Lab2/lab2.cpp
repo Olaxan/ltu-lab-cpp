@@ -1,5 +1,5 @@
 #include "..\UtilsLib\utilslib.h"
-#include "..\Lab2Lib\lab2lib.h"
+#include "..\LabLib\lablib.h"
 #include "car.h"
 
 #include <iostream>
@@ -11,13 +11,13 @@ int main() {
 
 	int select;
 
-	printf("ASSIGNMENT 2 menu:\n\n"
-		"1. Length\n"
-		"2. Swap 1\n"
-		"3. Swap 2\n"
-		"4. Salary\n"
-		"5. Car\n"
-		"0. Exit\n");
+	cout <<"ASSIGNMENT 2 menu:\n\n"
+		<< "1. Length\n"
+		<< "2. Swap 1\n"
+		<< "3. Swap 2\n"
+		<< "4. Salary\n"
+		<< "5. Car\n"
+		<< "0. Exit\n";
 
 	while (efiilj::IOUtils::getNum<int>(select, '0', "> ", "Please enter 0-5.", 0, 5))
 	{

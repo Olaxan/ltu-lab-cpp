@@ -143,12 +143,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lab1Lib\Lab1Lib.vcxproj">
-      <Project>{ea34d8e1-d9e4-4e36-afa2-658f04976fe3}</Project>
-    </ProjectReference>
+    <ClCompile Include="lab1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab1.cpp" />
+    <ProjectReference Include="..\LabLib\LabLib.vcxproj">
+      <Project>{ea34d8e1-d9e4-4e36-afa2-658f04976fe3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsLib\UtilsLib.vcxproj">
+      <Project>{ef623281-c2a0-4259-81d9-431aaf0a4355}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
