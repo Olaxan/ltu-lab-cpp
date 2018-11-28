@@ -11,7 +11,7 @@ namespace efiilj {
 	class Car
 	{
 	public:
-		Car(efiilj::Engine engine, efiilj::Tire* tires,	std::string brand, efiilj::Person owner);
+		static bool build();
 
 		const efiilj::Engine& engine() const { return _engine; }
 		void engine(const efiilj::Engine& engine) { _engine = engine; }
@@ -31,6 +31,8 @@ namespace efiilj {
 		~Car();
 
 	private:
+		Car(efiilj::Engine engine, efiilj::Tire* tires, std::string brand, efiilj::Person owner);
+
 		efiilj::Engine _engine;
 		efiilj::Tire* _tires;
 		std::string _brand;
