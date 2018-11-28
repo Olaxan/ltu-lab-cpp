@@ -17,4 +17,16 @@ namespace efiilj {
 		b = temp;
 	}
 
+	template <typename T>
+	T Lab2::average_salary(int count, T* employees) {
+		T total = 0;
+
+		for (int i = 0; i < count; i++) {
+			total += *(employees + i);
+		}
+
+		return total / count;
+
+	}
+
 }

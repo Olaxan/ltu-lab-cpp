@@ -29,6 +29,7 @@ int main() {
 				cout << "Enter some text to get the number of characters.\n> ";
 				getline(cin, s);
 				cout << "Length of '" << s << "': " << efiilj::Lab2::length(s.c_str()) << "\n";
+				break;
 			}
 			case 2:
 			{
@@ -41,7 +42,8 @@ int main() {
 				cout << "SWAP by value!\n";
 				efiilj::Lab2::swapVal<string>(&a, &b);
 				cout << "a: " << a;
-				cout << "b: " << b;
+				cout << ", b: " << b << "\n";
+				break;
 			}
 			case 3:
 			{
@@ -57,17 +59,36 @@ int main() {
 				cout << "SWAP by pointer!\n";
 				efiilj::Lab2::swapPtr<string>(aa, bb);
 				cout << "a: " << *aa;
-				cout << "b: " << *bb;
+				cout << ", b: " << *bb << "\n";
+				break;
 			}
 			case 4:
 			{
-				int i = 0;
+				int numEmployees;
 
-				cout << "Enter any number of salaries to get average.\nEnter 0 to calculate.\n";
-				while (efiilj::IOUtils::getNum<float>())
-				{
+				cout << "Enter number of employees.\n";
+				if (efiilj::IOUtils::getNum<int>(numEmployees, '0')) {
+					double* arr = new double[numEmployees];
+					for (int i = 0; i < numEmployees; i++)
+					{
+						string prompt = "User " + to_string(i + 1) + ": ";
+						if (efiilj::IOUtils::getNum<double>(arr[i], prompt))
+							continue;
 
+						arr[i] = 0;
+					}
+
+					cout << "\nAverage salary for " << numEmployees << " employees: ";
+					cout << efiilj::Lab2::average_salary<double>(numEmployees, arr);
+					cout << ":-\n";
+					break;
 				}
+				
+			}
+			case 5:
+			{
+				
+				break;
 			}
 			default:
 			{
