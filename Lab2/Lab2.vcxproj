@@ -143,11 +143,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Car\car.cpp" />
-    <ClCompile Include="..\Car\engine.cpp" />
-    <ClCompile Include="..\Car\person.cpp" />
-    <ClCompile Include="..\Car\tire.cpp" />
+    <ClCompile Include="car.cpp" />
+    <ClCompile Include="engine.cpp" />
     <ClCompile Include="lab2.cpp" />
+    <ClCompile Include="person.cpp" />
+    <ClCompile Include="tire.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lab2Lib\Lab2Lib.vcxproj">
@@ -158,10 +158,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Car\car.h" />
-    <ClInclude Include="..\Car\engine.h" />
-    <ClInclude Include="..\Car\person.h" />
-    <ClInclude Include="..\Car\tire.h" />
+    <ClInclude Include="car.h" />
+    <ClInclude Include="engine.h" />
+    <ClInclude Include="person.h" />
+    <ClInclude Include="tire.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

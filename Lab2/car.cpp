@@ -40,10 +40,14 @@ namespace efiilj {
 						efiilj::Car car = efiilj::Car(engine, tires, type, owner);
 						cout << "\n=== ORDER SUMMARY ===\n";
 						cout << car.toString();
+
+						return true;
 					}
 				}
 			}
 		}
+
+		return false;
 	}
 
 	const string Car::toString() const  {

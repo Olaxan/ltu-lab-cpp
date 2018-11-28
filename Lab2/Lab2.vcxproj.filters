@@ -18,30 +18,30 @@
     <ClCompile Include="lab2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Car\car.cpp">
+    <ClCompile Include="car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Car\engine.cpp">
+    <ClCompile Include="engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Car\person.cpp">
+    <ClCompile Include="person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Car\tire.cpp">
+    <ClCompile Include="tire.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Car\car.h">
+    <ClInclude Include="car.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Car\engine.h">
+    <ClInclude Include="engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Car\person.h">
+    <ClInclude Include="person.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Car\tire.h">
+    <ClInclude Include="tire.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

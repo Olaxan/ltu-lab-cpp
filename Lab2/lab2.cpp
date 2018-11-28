@@ -1,5 +1,6 @@
 #include "..\UtilsLib\utilslib.h"
 #include "..\Lab2Lib\lab2lib.h"
+#include "car.h"
 
 #include <iostream>
 #include <string>
@@ -57,7 +58,7 @@ int main() {
 				aa = &a;
 				bb = &b;
 				cout << "SWAP by pointer!\n";
-				efiilj::Lab2::swapPtr<string>(aa, bb);
+				efiilj::Lab2::swapPtr<string>(&aa, &bb);
 				cout << "a: " << *aa;
 				cout << ", b: " << *bb << "\n";
 				break;
@@ -89,7 +90,7 @@ int main() {
 			}
 			case 5:
 			{
-				
+				efiilj::Car::build();
 				break;
 			}
 			default:
