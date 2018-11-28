@@ -81,6 +81,8 @@ int main() {
 					cout << "\nAverage salary for " << numEmployees << " employees: ";
 					cout << efiilj::Lab2::average_salary<double>(numEmployees, arr);
 					cout << ":-\n";
+
+					delete arr;
 					break;
 				}
 				
