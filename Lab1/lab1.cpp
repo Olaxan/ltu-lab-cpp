@@ -1,5 +1,6 @@
-#include "..\LabLib\lablib.h"
 #include "..\UtilsLib\utilslib.h"
+
+#include "lab1.h"
 
 #include <iostream>
 

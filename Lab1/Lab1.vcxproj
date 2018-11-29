@@ -144,14 +144,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lab1.cpp" />
+    <ClCompile Include="lab1_func.cpp" />
+    <ClCompile Include="matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LabLib\LabLib.vcxproj">
-      <Project>{ea34d8e1-d9e4-4e36-afa2-658f04976fe3}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\UtilsLib\UtilsLib.vcxproj">
       <Project>{ef623281-c2a0-4259-81d9-431aaf0a4355}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\LabLib\matrix.h" />
+    <ClInclude Include="lab1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

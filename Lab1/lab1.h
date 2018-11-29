@@ -1,9 +1,10 @@
 #pragma once
 
-namespace efiilj {
+namespace efiilj
+{
 
-	class Lab1 {
-
+	class Lab1
+	{
 	public:
 		static void arrays(int width, int height);
 		static void bounce(int n);
@@ -19,17 +20,4 @@ namespace efiilj {
 
 	};
 
-	class Lab2
-	{
-	public:
-		static int length(const char* input);
-
-		template <typename T> static T average_salary(int count, T* employees);
-
-		template <typename T> static void swapVal(T* a, T* b);
-		template <typename T> static void swapPtr(T** a, T** b);
-	};
-
 }
-
-#include "lablib_impl.h"

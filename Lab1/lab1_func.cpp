@@ -1,6 +1,7 @@
-#include "lablib.h"
-#include "matrix.h"
 #include "..\UtilsLib\utilslib.h"
+
+#include "matrix.h"
+#include "lab1.h"
 
 #include <iostream>
 

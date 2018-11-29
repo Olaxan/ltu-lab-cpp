@@ -1,5 +1,6 @@
 #include "..\UtilsLib\utilslib.h"
-#include "..\LabLib\lablib.h"
+
+#include "lab2.h"
 #include "car.h"
 
 #include <iostream>
