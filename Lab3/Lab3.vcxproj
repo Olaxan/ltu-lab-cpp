@@ -18,6 +18,12 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="vector2D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vector2D.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{853EE639-6CC0-4655-AA89-B7BA1F243987}</ProjectGuid>
@@ -142,12 +148,6 @@
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\LabLib\vector2D.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\LabLib\vector2D.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

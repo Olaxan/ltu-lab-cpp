@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\LabLib\vector2D.cpp">
+    <ClCompile Include="vector2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\LabLib\vector2D.h">
+    <ClInclude Include="vector2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
