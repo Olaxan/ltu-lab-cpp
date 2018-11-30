@@ -1,40 +1,37 @@
 #pragma once
 
+#include <string>
+
 namespace efiilj {
 
 	class Vector2D
 	{
+	private:
+		float _arr[2];
 	public:
 		Vector2D();
 		Vector2D(const Vector2D &copy);
-		Vector2D(float x1, float y1, float x2, float y2);
+		Vector2D(float x, float y);
 
-		Vector2D operator + (Vector2D &vect);
-		Vector2D operator - (Vector2D &vect);
-		Vector2D operator * (Vector2D &vect);
+		Vector2D operator + (Vector2D &other);
+		Vector2D operator - (Vector2D &other);
+		Vector2D operator * (Vector2D &other);
 
-		Vector2D operator == (Vector2D &vect);
-		Vector2D operator != (Vector2D &vect);
+		bool operator == (Vector2D &other);
+		bool operator != (Vector2D &other);
 
-		const float& x1() const { return _arr[0]; }
-		void x1(const float& x1) { this->_arr[0] = x1; }
+		const float& x() const { return this->_arr[0]; }
+		void x(const float& x) { this->_arr[0] = x; }
 
-		const float& y1() const { return _arr[1]; }
-		void y1(const float& y1) { this->_arr[1] = y1; }
+		const float& y() const { return _arr[1]; }
+		void y(const float& y) { this->_arr[1] = y; }
 
-		const float& x2() const { return _arr[2]; }
-		void x2(const float& x2) { this->_arr[2] = x2; }
-
-		const float& y2() const { return _arr[3]; }
-		void y2(const float& y2) { this->_arr[3] = y2; }
-
-		float dot(Vector2D &vector) const;
+		float dot(Vector2D &other) const;
 		float norm() const;
 
-		~Vector2D();
+		std::string to_string() const;
 
-	private:
-		float _arr[4];
+		~Vector2D();
 	};
 
 }

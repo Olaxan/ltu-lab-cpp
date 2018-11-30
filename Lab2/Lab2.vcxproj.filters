@@ -30,7 +30,7 @@
     <ClCompile Include="person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\LabLib\lab2_func.cpp">
+    <ClCompile Include="lab2_func.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

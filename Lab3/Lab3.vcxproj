@@ -19,9 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="lab3.cpp" />
+    <ClCompile Include="matrix2D.cpp" />
     <ClCompile Include="vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="matrix2D.h" />
     <ClInclude Include="vector2D.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

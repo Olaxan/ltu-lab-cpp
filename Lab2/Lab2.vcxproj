@@ -143,10 +143,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\LabLib\lab2_func.cpp" />
     <ClCompile Include="car.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="lab2.cpp" />
+    <ClCompile Include="lab2_func.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="tire.cpp" />
   </ItemGroup>
