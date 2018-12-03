@@ -1,4 +1,4 @@
-#include "vector2D.h"
+#include "matharr.h"
 
 #include <cmath>
 
@@ -23,7 +23,7 @@ namespace efiilj
 		this->y(y);
 	}
 
-	Vector2D Vector2D::operator+(Vector2D& other)
+	Vector2D Vector2D::operator + (const Vector2D& other) const
 	{
 		Vector2D vect;
 		vect.x(this->x() + other.x());
@@ -31,7 +31,7 @@ namespace efiilj
 		return vect;
 	}
 
-	Vector2D Vector2D::operator-(Vector2D& other)
+	Vector2D Vector2D::operator - (const Vector2D& other) const
 	{
 		Vector2D vect;
 		vect.x(this->x() - other.x());
@@ -39,7 +39,7 @@ namespace efiilj
 		return vect;
 	}
 
-	Vector2D Vector2D::operator*(Vector2D& other)
+	Vector2D Vector2D::operator * (const Vector2D& other) const
 	{
 		Vector2D vect;
 		vect.x(this->x() * other.x());
@@ -47,17 +47,25 @@ namespace efiilj
 		return vect;
 	}
 
-	bool Vector2D::operator==(Vector2D& other)
+	Vector2D Vector2D::operator * (const Matrix2D& other) const
+	{
+		Vector2D vect;
+		vect.x(other.a() * this->x() + other.b() * this->y());
+		vect.y(other.c() * this->x() + other.d() * this->y());
+		return vect;
+	}
+
+	bool Vector2D::operator == (const Vector2D& other) const
 	{
 		return (this->y() == other.y() && this->x() == other.x());
 	}
 
-	bool Vector2D::operator!=(Vector2D& other)
+	bool Vector2D::operator != (const Vector2D& other) const
 	{
 		return (this->y() != other.y() || this->x() != other.x());
 	}
 
-	float Vector2D::dot(Vector2D& other) const
+	float Vector2D::dot(const Vector2D& other) const
 	{
 		return (this->x() * other.x() + this->y() * other.y());
 	}
@@ -65,6 +73,11 @@ namespace efiilj
 	float Vector2D::norm() const
 	{
 		return sqrt(powf(this->x(), 2) + powf(this->y(), 2));
+	}
+
+	Vector2D* Vector2D::getTransformed(const Matrix2D &trans) const
+	{
+		return new Vector2D((*this) * trans);
 	}
 
 	std::string Vector2D::to_string() const

@@ -1,4 +1,4 @@
-#include "matrix2D.h"
+#include "matharr.h"
 
 #include <sstream>
 
@@ -17,8 +17,8 @@ namespace efiilj
 	{
 		this->a(copy.a());
 		this->b(copy.b());
-		this->c(copy.d());
-		this->d(copy.c());
+		this->c(copy.c());
+		this->d(copy.d());
 	}
 
 	Matrix2D::Matrix2D(float a, float b, float c, float d) {
@@ -47,12 +47,6 @@ namespace efiilj
 		this->d(other.d());
 
 		return *this;
-	}
-
-
-	Matrix2D* Matrix2D::getTransformed(const Matrix2D &trans) const
-	{
-		return new Matrix2D((*this) * trans);
 	}
 
 	Matrix2D* Matrix2D::getRotated(const float &angle) const

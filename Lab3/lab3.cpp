@@ -1,5 +1,4 @@
-#include "vector2D.h"
-#include "matrix2D.h"
+#include "matharr.h"
 
 #include <iostream>
 
@@ -23,9 +22,11 @@ int main() {
 	efiilj::Matrix2D mat2 = mat * mat;
 	efiilj::Matrix2D* mat3 = mat.getTransposed();
 	efiilj::Matrix2D* mat4 = mat.getRotated(90);
-	efiilj::Matrix2D* mat5 = mat.getTransformed(mat2);
+	efiilj::Vector2D* v5 = vect.getTransformed(mat);
 	cout << mat.to_string();
 	cout << mat2.to_string();
+	cout << v5->to_string();
 
 	delete mat3;
+	delete v5;
 }

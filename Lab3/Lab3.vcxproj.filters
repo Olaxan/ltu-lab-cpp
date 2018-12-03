@@ -26,10 +26,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="vector2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="matrix2D.h">
+    <ClInclude Include="matharr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
