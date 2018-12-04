@@ -1,4 +1,5 @@
-#include "catalogue.h"
+#include "pool.h"
+#include "..\UtilsLib\utilslib.h"
 
 #include <iostream>
 
@@ -7,10 +8,10 @@ using namespace std;
 namespace efiilj
 {
 
-	Catalogue::Catalogue() : _name("Unnamed") { }
-	Catalogue::Catalogue(std::string name) : _name(name) { }
+	Pool::Pool() : _name("Unnamed") { }
+	Pool::Pool(std::string name) : _name(name) { }
 
-	void Catalogue::addVehicle()
+	void Pool::addVehicle()
 	{
 		cout << "Choose a pre-made vehicle template, or create a new: \n\n";
 		
@@ -24,21 +25,21 @@ namespace efiilj
 		cout << "0. Register New";
 	}
 
-	void Catalogue::addVehicle(efiilj::Vehicle vehicle)
+	void Pool::addVehicle(efiilj::Vehicle vehicle)
 	{
 		this->_vehicleTemplates.insert(vehicle);
 	}
 
-	void Catalogue::addVehicle(efiilj::Vehicle vehicle, float costPerHour)
+	void Pool::addVehicle(efiilj::Vehicle vehicle, float costPerHour)
 	{
+		this->_vehicleTemplates.insert(vehicle);
 		efiilj::Vehicle v = efiilj::Vehicle(vehicle);
-		this->_vehicleTemplates.insert(v);
 		v.costPerHour = costPerHour;
-		this->_vehicles.push_back(v);
+		//this->_vehicles.push_back(v);
 	}
 
 
-	Catalogue::~Catalogue() { }
+	Pool::~Pool() { }
 
 }
 

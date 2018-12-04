@@ -143,13 +143,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="catalogue.h" />
+    <ClInclude Include="pool.h" />
     <ClInclude Include="vehicle.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="catalogue.cpp" />
+    <ClCompile Include="pool.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="vehicle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilsLib\UtilsLib.vcxproj">
+      <Project>{ef623281-c2a0-4259-81d9-431aaf0a4355}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

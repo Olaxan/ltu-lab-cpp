@@ -8,15 +8,15 @@
 namespace efiilj
 {
 
-	class Catalogue
+	class Pool
 	{
 	private:
-		std::vector<efiilj::Vehicle> _vehicles;
+		std::vector< std::pair<efiilj::Vehicle, int> > _vehicles;
 		std::set<efiilj::Vehicle> _vehicleTemplates;
 		std::string _name;
 	public:
-		Catalogue();
-		Catalogue(std::string name);
+		Pool();
+		Pool(std::string name);
 
 		void addVehicle();
 		void addVehicle(efiilj::Vehicle vehicle);
@@ -24,9 +24,8 @@ namespace efiilj
 
 		efiilj::Vehicle findVehicle();
 
-		~Catalogue();
+		~Pool();
 	};
-
 }
 
 

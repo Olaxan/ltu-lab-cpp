@@ -1,8 +1,31 @@
-#include "catalogue.h"
+#include "pool.h"
+#include "..\UtilsLib\menu.h"
+
+#include <string>
+#include <iostream>
+
+
+void doToot()
+{
+	std::cout << "toot";
+}
+
+void doWank()
+{
+	std::cout << "WHANK";
+}
+
+void doSnek()
+{
+	std::cout << "<==========(:)-<";
+}
+
 
 int main()
 {
-	efiilj::Catalogue cat = efiilj::Catalogue("Regular");
-	cat.addVehicle(efiilj::Vehicle("Sedan", 50.0f, 25.0f, 4));
-	cat.addVehicle();
+	efiilj::Menu main = efiilj::Menu("Main Menu");
+	main.addItem("Register a vehicle", doToot);
+	main.addItem("Search registry", doWank);
+	main.exit = "exit";
+	main.show();
 }

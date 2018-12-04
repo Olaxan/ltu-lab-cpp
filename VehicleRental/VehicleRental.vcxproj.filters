@@ -18,7 +18,7 @@
     <ClInclude Include="vehicle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="catalogue.h">
+    <ClInclude Include="pool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -26,10 +26,10 @@
     <ClCompile Include="vehicle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="catalogue.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="pool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

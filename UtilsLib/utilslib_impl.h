@@ -18,7 +18,7 @@ namespace efiilj {
 	}
 
 	template <typename T>
-	bool IOUtils::getNum(T &out, char exit, std::string prompt, std::string error, int min, int max) {
+	bool IOUtils::getNum(T &out, std::string exit, std::string prompt, std::string error, int min, int max) {
 
 		static_assert(std::is_arithmetic<T>::value, "Type must be arithmetic");
 
@@ -33,7 +33,7 @@ namespace efiilj {
 
 			if (input.length() > 0) {
 
-				if (input[0] == exit)
+				if (input == exit)
 					return false;
 
 				ss << input;
@@ -51,6 +51,11 @@ namespace efiilj {
 
 			cout << error << endl;
 		}
+	}
+
+	template <typename T>
+	bool IOUtils::getNum(T &out, char exit, std::string prompt, std::string error, int min, int max) {
+		return IOUtils::getNum(out, string(1, exit), prompt, error, min, max);
 	}
 
 	template <typename T>
