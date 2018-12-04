@@ -20,16 +20,19 @@ namespace efiilj
 		const float& a() const { return this->_arr[0]; }
 		void a(const float& a) { this->_arr[0] = a; }
 
-		const float& b() const { return this->_arr[0]; }
-		void b(const float& b) { this->_arr[0] = b; }
+		const float& b() const { return this->_arr[1]; }
+		void b(const float& b) { this->_arr[1] = b; }
 
-		const float& c() const { return this->_arr[0]; }
-		void c(const float& c) { this->_arr[0] = c; }
+		const float& c() const { return this->_arr[2]; }
+		void c(const float& c) { this->_arr[2] = c; }
 
-		const float& d() const { return this->_arr[0]; }
-		void d(const float& d) { this->_arr[0] = d; }
+		const float& d() const { return this->_arr[3]; }
+		void d(const float& d) { this->_arr[3] = d; }
 
+		//Applies a rotation the the matrix (in degrees). Returns a pointer to the new resulting Matrix2D.
 		Matrix2D* getRotated(const float &angle) const;
+
+		//Switch rows/columns in the matrix. Returns a pointer to the new resulting Matrix2D. 
 		Matrix2D* getTransposed() const;
 
 		std::string to_string();
@@ -63,6 +66,7 @@ namespace efiilj
 		float dot(const Vector2D &other) const;
 		float norm() const;
 
+		//Performs a matrix transformation on the Vector2D. Returns a pointer to the new resulting Vector2D.
 		Vector2D* getTransformed(const Matrix2D &trans) const;
 
 		std::string to_string() const;
