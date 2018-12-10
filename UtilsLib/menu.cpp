@@ -7,55 +7,64 @@
 namespace efiilj
 {
 
-	Menu::Menu() { }
 	Menu::Menu(std::string title, std::string prompt) : title(title), prompt(prompt) { }
 
-	void Menu::show() const
+	bool Menu::show() const
 	{
-		if (title.length() > 0)
-		{
-			cout << title << "\n";
-		}
-
-
-		if (allowExit())
-			cout << "Enter '" << exit << "' to exit.\n\n";
-
-		listItems();
+		cout << "\n";
 
 		int select;
-		if (efiilj::IOUtils::getNum<int>(select, prompt, error, 1 - allowExit(), _items.size()))
+
+		stringstream ss;
+		ss << "Please select a number " << to_string(1 - allowExit) << " - " << to_string(_items.size()) << ".";
+		std::string error = ss.str();
+
+		while (true)
 		{
-			
+			if (title.length() > 0)
+			{
+				cout << title << "\n\n";
+			}
+
+			listItems();
+
+			if (efiilj::IOUtils::getNum<int>(select, prompt, error, 1 - allowExit, _items.size()))
+			{
+				if (select == 0 || _items[select - 1].invoke())
+					return true;
+			}
+			else return false;
+
+			cout << "\n";
 		}
 	}
 
-	int Menu::index(const MenuItem* item) const
+	void Menu::addItem(std::string name, bool(*func)())
 	{
-		return (distance(_items.begin(), _items.find(*item)));
+		_items.push_back(MenuItem(this, name, func));
 	}
 
-	void Menu::addItem(std::string name, void(*func)())
+	void Menu::addItem(std::string name, Menu* subMenu)
 	{
-		_items.insert(MenuItem(this, name, func));
-	}
-
-	void Menu::addItem(std::string name, Menu subMenu)
-	{
-		_items.insert(MenuItem(this, name, &subMenu));
+		subMenu->_isSubmenu = true;
+		_items.push_back(MenuItem(this, name, subMenu));
 	}
 
 	void Menu::listItems() const
 	{
+		int i = 1;
 		for (auto it = _items.begin(); it != _items.end(); it++)
 		{
-			cout << it->index() << ". " << it->name << "\n";
+			cout << i << ". " << it->name << "\n";
+			i++;
 		}
-	}
-
-	bool Menu::allowExit() const
-	{
-		return (exit != "\0");
+		if (allowExit)
+		{
+			if (_isSubmenu)
+				cout << "0. Back\n";
+			else
+				cout << "0. Quit\n";
+		}
 	}
 
 	Menu::~Menu() { }

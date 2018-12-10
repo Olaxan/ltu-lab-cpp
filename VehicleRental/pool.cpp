@@ -2,6 +2,7 @@
 #include "..\UtilsLib\utilslib.h"
 
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -13,29 +14,96 @@ namespace efiilj
 
 	void Pool::addVehicle()
 	{
-		cout << "Choose a pre-made vehicle template, or create a new: \n\n";
-		
-		int i = 1;
-		for (auto it = _vehicleTemplates.begin(); it != _vehicleTemplates.end(); it++)
+		Vehicle v;
+		int count;
+		if (showAddVehicleDialog(v) && IOUtils::getNum<int>(count, "Count: ", "Error: Positive values only.", 0))
 		{
-			std::cout << i << ". " << it->model << std::endl;
-			i++;
+			addVehicle(v, count);
+		}
+	}
+
+	void Pool::addVehicle(Vehicle vehicle, int count)
+	{
+		this->_vehicleTemplates.push_back(vehicle);
+
+		PoolItem item = PoolItem(vehicle, count);
+		this->_vehicles.push_back(item);
+	}
+
+	void Pool::addVehicle(Vehicle vehicle, int count, float costPerHour)
+	{
+		this->_vehicleTemplates.push_back(vehicle);
+
+		PoolItem item = PoolItem(vehicle, count);
+		item.vehicle.costPerHour = costPerHour;
+		this->_vehicles.push_back(item);
+	}
+
+	bool Pool::showAddVehicleDialog(Vehicle& vehicle)
+	{
+
+		cout << "Choose a pre-made vehicle template, or create a new: \n\n";
+
+		listTemplates();
+
+		cout << this->count() + 1 << ". Register New\n";
+		cout << "0. Exit\n";
+
+		int select;
+		if (IOUtils::getNum<int>(select, "> ", "Invalid input.", 0, count() + 1) && select != 0)
+		{
+
+			std::string type;
+			int capacity;
+			float cost, fuel;
+
+			if (select == this->count() + 1)
+			{
+				cout << "Type: ";
+				getline(cin, type);
+
+				IOUtils::getNum<float>(cost, "Rental cost: ", "Error: Positive values only.", 0);
+				IOUtils::getNum<float>(fuel, "Fuel efficiency: ", "Error: Positive values only.", 0);
+				IOUtils::getNum<int>(capacity, "Seat capacity: ", "Error: Positive integers only.", 0);
+
+				if (type.length() > 0)
+				{
+					vehicle = Vehicle(type, cost, fuel, capacity);
+					return true;
+				}
+			}
+			else
+			{
+				vehicle = _vehicleTemplates[select - 1];
+				return true;
+			}
 		}
 
-		cout << "0. Register New";
+		return false;
 	}
 
-	void Pool::addVehicle(efiilj::Vehicle vehicle)
+	void Pool::listTemplates()
 	{
-		this->_vehicleTemplates.insert(vehicle);
+		if (count() == 0)
+			cout << "No templates available.\n";
+		else
+		{
+			for (int i = 0; i < _vehicleTemplates.size(); i++)
+			{
+				cout << i + 1 << ". " << _vehicleTemplates[i].model << "\n";
+			}
+		}
+		cout << "\n";
 	}
 
-	void Pool::addVehicle(efiilj::Vehicle vehicle, float costPerHour)
+	int Pool::count()
 	{
-		this->_vehicleTemplates.insert(vehicle);
-		efiilj::Vehicle v = efiilj::Vehicle(vehicle);
-		v.costPerHour = costPerHour;
-		//this->_vehicles.push_back(v);
+		return _vehicles.size();
+	}
+
+	Vehicle Pool::findVehicle()
+	{
+		return Vehicle();
 	}
 
 

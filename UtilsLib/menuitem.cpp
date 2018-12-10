@@ -16,37 +16,17 @@ namespace std
 namespace efiilj
 {
 	MenuItem::MenuItem() : parent(nullptr), name(""), hasSubmenu(false) { }
-	MenuItem::MenuItem(const Menu* parent, std::string name, void(*func)()) : parent(parent), name(name), func(func), hasSubmenu(false) { }
+	MenuItem::MenuItem(const Menu* parent, std::string name, bool(*func)()) : parent(parent), name(name), func(func), hasSubmenu(false) { }
 	MenuItem::MenuItem(const Menu* parent, std::string name, Menu* subMenu) : parent(parent), name(name), subMenu(subMenu), hasSubmenu(true) { }
 
-	bool MenuItem::operator<(const MenuItem & other) const
-	{
-		return (this->name[0] < other.name[0]);
-	}
-
-	bool MenuItem::operator==(const MenuItem & other) const
-	{
-		return (this->name == other.name);
-	}
-
-	bool MenuItem::operator!=(const MenuItem & other) const
-	{
-		return (this->name != other.name);
-	}
-
-	int MenuItem::index() const
-	{
-		if (parent == nullptr)
-			return -1;
-
-		return parent->index(this);
-	}
-
-	void MenuItem::invoke()
+	bool MenuItem::invoke() const
 	{
 		if (hasSubmenu)
+		{
 			this->subMenu->show();
+			return false;
+		}
 		else
-			this->func();
+			return this->func();
 	}
 }

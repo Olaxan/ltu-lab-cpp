@@ -10,21 +10,18 @@ namespace efiilj
 	private:
 		Menu* subMenu;
 		const Menu* parent;
-		void(*func)();
+		bool(*func)();
 		bool hasSubmenu;
 	public:
 		MenuItem();
-		MenuItem(const Menu* parent, std::string name, void(*func)());
+		MenuItem(const Menu* parent, std::string name, bool(*func)());
 		MenuItem(const Menu* parent, std::string name, Menu* subMenu);
 
 		std::string name;
 
-		int index() const;
-		void invoke();
+		bool invoke() const;
 
-		bool operator < (const MenuItem & other) const;
-		bool operator == (const MenuItem & other) const;
-		bool operator != (const MenuItem & other) const;
+		friend class Menu;
 	};
 
 }

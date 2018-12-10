@@ -36,6 +36,7 @@ namespace efiilj {
 				if (input == exit)
 					return false;
 
+				ss.clear();
 				ss << input;
 				ss >> test;
 

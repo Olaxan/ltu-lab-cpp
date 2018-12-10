@@ -32,5 +32,8 @@
     <ClCompile Include="pool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="poolitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

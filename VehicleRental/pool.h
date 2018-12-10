@@ -3,26 +3,44 @@
 #include "vehicle.h"
 
 #include <vector>
-#include <set>
 
 namespace efiilj
 {
+	class PoolItem
+	{
+	private:
+		int _total;
+		int _current;
+	public:
+		PoolItem();
+		PoolItem(Vehicle, int total);
+
+		Vehicle vehicle;
+
+		const int& total() const;
+		bool total(const int& total);
+	};
 
 	class Pool
 	{
 	private:
-		std::vector< std::pair<efiilj::Vehicle, int> > _vehicles;
-		std::set<efiilj::Vehicle> _vehicleTemplates;
+		std::vector<PoolItem> _vehicles;
+		std::vector<Vehicle> _vehicleTemplates;
 		std::string _name;
 	public:
 		Pool();
 		Pool(std::string name);
 
 		void addVehicle();
-		void addVehicle(efiilj::Vehicle vehicle);
-		void addVehicle(efiilj::Vehicle vehicle, float costPerHour);
+		void addVehicle(Vehicle vehicle, int count);
+		void addVehicle(Vehicle vehicle, int count, float costPerHour);
 
-		efiilj::Vehicle findVehicle();
+		bool showAddVehicleDialog(Vehicle& vehicle);
+
+		void listTemplates();
+		int count();
+
+		Vehicle findVehicle();
 
 		~Pool();
 	};

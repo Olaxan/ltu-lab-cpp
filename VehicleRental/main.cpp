@@ -4,28 +4,30 @@
 #include <string>
 #include <iostream>
 
+efiilj::Pool pool = efiilj::Pool("Customers");
 
-void doToot()
+bool doAdd()
 {
-	std::cout << "toot";
+	pool.addVehicle();
+	return false;
 }
 
-void doWank()
+bool doFind()
 {
-	std::cout << "WHANK";
-}
+	int capacity;
+	float price;
 
-void doSnek()
-{
-	std::cout << "<==========(:)-<";
+	efiilj::IOUtils::getNum<float>(price, "Minimum capacity: ", "Enter an integer > 0", 0);
+	pool.findVehicle();
+	return true;
 }
-
 
 int main()
 {
-	efiilj::Menu main = efiilj::Menu("Main Menu");
-	main.addItem("Register a vehicle", doToot);
-	main.addItem("Search registry", doWank);
-	main.exit = "exit";
-	main.show();
+	
+
+	efiilj::Menu mainMenu = efiilj::Menu("=====[ Main Menu ]=====");
+	mainMenu.addItem("Register new vehicle", doAdd);
+	mainMenu.addItem("Search vehicle registry", doFind);
+	mainMenu.show();
 }

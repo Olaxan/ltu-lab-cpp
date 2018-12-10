@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="pool.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="poolitem.cpp" />
     <ClCompile Include="vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
