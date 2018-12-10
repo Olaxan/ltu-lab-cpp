@@ -16,7 +16,7 @@ namespace efiilj
 	{
 		Vehicle v;
 		int count;
-		if (showAddVehicleDialog(v) && IOUtils::getNum<int>(count, '0', "Count: ", 0))
+		if (showAddVehicleDialog(v) && IOUtils::getNum<int>(count, '0', "\nCount: ", 0))
 		{
 			addVehicle(v, count);
 		}
@@ -24,21 +24,39 @@ namespace efiilj
 
 	void Pool::addVehicle(Vehicle vehicle, int count)
 	{
-		this->_vehicleTemplates.push_back(vehicle);
+		if (!templateExists(vehicle))
+			this->_vehicleTemplates.push_back(vehicle);
 
-		PoolItem item = PoolItem(vehicle, count);
-		this->_vehicles.push_back(item);
+		PoolItem* item = findSingleVehicle(vehicle);
+
+		if (item == nullptr)
+			this->_vehicles.push_back(PoolItem(vehicle, count));
+		else
+			(*item) += count;
+
 	}
 
 	void Pool::addVehicle(Vehicle vehicle, int count, float costPerHour)
 	{
-		this->_vehicleTemplates.push_back(vehicle);
-
-		PoolItem item = PoolItem(vehicle, count);
-		item.vehicle.costPerHour = costPerHour;
-		this->_vehicles.push_back(item);
+		cout << "NOOTL?";
 	}
 	
+	PoolItem* Pool::findSingleVehicle(Vehicle vehicle)
+	{
+		PoolItem* item = nullptr;
+
+		for (int i = 0; i < _vehicles.size(); i++)
+		{
+			if (_vehicles[i].vehicle == vehicle)
+			{
+				item = &_vehicles[i];
+				break;
+			}
+		}
+
+		return item;
+	}
+
 	vector<PoolItem*> Pool::findVehicles(int capacity, float costPerHour)
 	{
 		vector<PoolItem*> matches;
@@ -49,6 +67,28 @@ namespace efiilj
 				matches.push_back(&_vehicles[i]);
 		}
 		return matches;
+	}
+
+	bool Pool::vehicleExists(const Vehicle & vehicle) const
+	{
+		for (int i = 0; i < _vehicles.size(); i++)
+		{
+			if (_vehicles[i].vehicle == vehicle)
+				return true;
+		}
+
+		return false;
+	}
+
+	bool Pool::templateExists(const Vehicle& vehicle) const
+	{
+		for (int i = 0; i < _vehicleTemplates.size(); i++)
+		{
+			if (_vehicleTemplates[i] == vehicle)
+				return true;
+		}
+
+		return false;
 	}
 
 	bool Pool::rentVehicle(PoolItem& item, int count)

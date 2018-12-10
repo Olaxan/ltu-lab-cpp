@@ -40,11 +40,13 @@ bool doFind()
 					<< " ]\n";
 			}
 
-			if (efiilj::IOUtils::getNum<int>(select, '0', "Rent vehicle?\n> ", 1, matches.size()) && efiilj::IOUtils::getNum<int>(count, '0', "Quantity: ", 1)) {
+			if (efiilj::IOUtils::getNum<int>(select, '0', "\nRent vehicle?\n> ", 1, matches.size()) && efiilj::IOUtils::getNum<int>(count, '0', "Quantity: ", 1)) {
 				if (matches[select - 1]->rentVehicle(count))
-					cout << "Vehicle selected for rental.\nPlease speak with an AVIS representative for further assistance.\n";
+					cout << "\nVehicle selected for rental.\n";
 				else
-					cout << "Unable to select vehicle for rental (not available).\n";
+					cout << "\nUnable to select vehicle for rental (not available).\n";
+
+				cout << "Please speak with an AVIS representative for further assistance.\n";
 			}
 		}
 	}
@@ -53,8 +55,6 @@ bool doFind()
 
 int main()
 {
-	
-
 	efiilj::Menu mainMenu = efiilj::Menu("=====[ Main Menu ]=====");
 	mainMenu.addItem("Register new vehicle", doAdd);
 	mainMenu.addItem("Search vehicle registry", doFind);

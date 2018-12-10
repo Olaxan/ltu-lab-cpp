@@ -27,7 +27,7 @@ namespace efiilj {
 		string input, error;
 		T test;
 
-		err << "Please enter '" << typeid(T).name() << "' type";
+		err << "\nPlease enter '" << typeid(T).name() << "'";
 		if (min != INT_MIN && max != INT_MAX)
 			err << " between " << min << " and " << max;
 		else if (min != INT_MIN)
@@ -44,6 +44,9 @@ namespace efiilj {
 
 		while (true) {
 
+			ss.clear();
+			ss.str(std::string());
+
 			cout << prompt;
 			getline(cin, input);
 
@@ -52,7 +55,6 @@ namespace efiilj {
 				if (input.length() == 1 && input[0] == exit)
 					return false;
 
-				ss.clear();
 				ss << input;
 				ss >> test;
 

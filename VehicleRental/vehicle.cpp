@@ -36,17 +36,17 @@ namespace efiilj
 
 
 
-	bool Vehicle::operator < (const Vehicle & other) const
+	bool Vehicle::operator < (const Vehicle& other) const
 	{
 		return (this->costPerHour < other.costPerHour);
 	}
 
-	bool Vehicle::operator == (const Vehicle & other) const
+	bool Vehicle::operator == (const Vehicle& other) const
 	{
 		return (std::hash<efiilj::Vehicle>()(*this) == std::hash<efiilj::Vehicle>()(other));
 	}
 
-	bool Vehicle::operator != (const Vehicle & other) const
+	bool Vehicle::operator != (const Vehicle& other) const
 	{
 		return (std::hash<efiilj::Vehicle>()(*this) != std::hash<efiilj::Vehicle>()(other));
 	}

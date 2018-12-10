@@ -26,6 +26,7 @@ namespace efiilj
 
 			if (efiilj::IOUtils::getNum<int>(select, prompt, 1 - allowExit, _items.size()))
 			{
+				cout << "\n";
 				if (select == 0 || _items[select - 1].invoke())
 					return true;
 			}

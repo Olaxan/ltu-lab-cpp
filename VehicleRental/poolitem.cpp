@@ -40,4 +40,18 @@ namespace efiilj
 
 		return false;
 	}
+
+	PoolItem& PoolItem::operator-=(int count)
+	{
+		this->_total -= count;
+		this->_current -= count;
+		return *this;
+	}
+
+	PoolItem& PoolItem::operator+=(int count)
+	{
+		this->_total += count;
+		this->_current += count;
+		return *this;
+	}
 }
