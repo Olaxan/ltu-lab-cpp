@@ -16,7 +16,7 @@ namespace efiilj
 	{
 		Vehicle v;
 		int count;
-		if (showAddVehicleDialog(v) && IOUtils::getNum<int>(count, "Count: ", "Error: Positive values only.", 0))
+		if (showAddVehicleDialog(v) && IOUtils::getNum<int>(count, '0', "Count: ", 0))
 		{
 			addVehicle(v, count);
 		}
@@ -38,6 +38,28 @@ namespace efiilj
 		item.vehicle.costPerHour = costPerHour;
 		this->_vehicles.push_back(item);
 	}
+	
+	vector<PoolItem*> Pool::findVehicles(int capacity, float costPerHour)
+	{
+		vector<PoolItem*> matches;
+
+		for (int i = 0; i < _vehicles.size(); i++)
+		{
+			if (_vehicles[i].vehicle.capacity >= capacity && _vehicles[i].vehicle.costPerHour <= costPerHour)
+				matches.push_back(&_vehicles[i]);
+		}
+		return matches;
+	}
+
+	bool Pool::rentVehicle(PoolItem& item, int count)
+	{
+		return item.rentVehicle();
+	}
+
+	bool Pool::returnVehicle(PoolItem& item, int count)
+	{
+		return item.returnVehicle();
+	}
 
 	bool Pool::showAddVehicleDialog(Vehicle& vehicle)
 	{
@@ -50,7 +72,7 @@ namespace efiilj
 		cout << "0. Exit\n";
 
 		int select;
-		if (IOUtils::getNum<int>(select, "> ", "Invalid input.", 0, count() + 1) && select != 0)
+		if (IOUtils::getNum<int>(select, '0', "> ", 0, count() + 1) && select != 0)
 		{
 
 			std::string type;
@@ -62,9 +84,9 @@ namespace efiilj
 				cout << "Type: ";
 				getline(cin, type);
 
-				IOUtils::getNum<float>(cost, "Rental cost: ", "Error: Positive values only.", 0);
-				IOUtils::getNum<float>(fuel, "Fuel efficiency: ", "Error: Positive values only.", 0);
-				IOUtils::getNum<int>(capacity, "Seat capacity: ", "Error: Positive integers only.", 0);
+				IOUtils::getNum<float>(cost, "Rental cost: ", 0);
+				IOUtils::getNum<float>(fuel, "Fuel efficiency: ", 0);
+				IOUtils::getNum<int>(capacity, "Seat capacity: ", 0);
 
 				if (type.length() > 0)
 				{
@@ -81,6 +103,7 @@ namespace efiilj
 
 		return false;
 	}
+
 
 	void Pool::listTemplates()
 	{
@@ -101,10 +124,6 @@ namespace efiilj
 		return _vehicles.size();
 	}
 
-	Vehicle Pool::findVehicle()
-	{
-		return Vehicle();
-	}
 
 
 	Pool::~Pool() { }

@@ -10,9 +10,8 @@ namespace efiilj {
 		// Asks the user for an integer until one is input.
 		static int getInt(std::string prompt = "> ", std::string error = "Please enter an integer.", int min = INT_MIN, int max = INT_MAX, char exit = '\0');
 
-		template <typename T> static bool getNum(T &out, std::string exit, std::string prompt = "> ", std::string error = "Invalid input.", int min = INT_MIN, int max = INT_MAX);
-		template <typename T> static bool getNum(T &out, char exit, std::string prompt = "> ", std::string error = "Invalid input.", int min = INT_MIN, int max = INT_MAX);
-		template <typename T> static bool getNum(T &out, std::string prompt = "> ", std::string error = "Invalid input.", int min = INT_MIN, int max = INT_MAX);
+		template <typename T> static bool getNum(T &out, std::string prompt = "> ", int min = INT_MIN, int max = INT_MAX);
+		template <typename T> static bool getNum(T &out, char exit, std::string prompt = "> ", int min = INT_MIN, int max = INT_MAX);
 
 	};
 

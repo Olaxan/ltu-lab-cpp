@@ -17,8 +17,13 @@ namespace efiilj
 
 		Vehicle vehicle;
 
+		bool rentVehicle(int count = 1);
+		bool returnVehicle(int count = 1);
+
 		const int& total() const;
 		bool total(const int& total);
+
+		const int& available() const { return _current; }
 	};
 
 	class Pool
@@ -35,12 +40,16 @@ namespace efiilj
 		void addVehicle(Vehicle vehicle, int count);
 		void addVehicle(Vehicle vehicle, int count, float costPerHour);
 
+		std::vector<PoolItem*> findVehicles(int capacity, float costPerHour);
+
+		bool rentVehicle(PoolItem &item, int count = 1);
+		bool returnVehicle(PoolItem &item, int count = 1);
+
 		bool showAddVehicleDialog(Vehicle& vehicle);
 
 		void listTemplates();
 		int count();
 
-		Vehicle findVehicle();
 
 		~Pool();
 	};

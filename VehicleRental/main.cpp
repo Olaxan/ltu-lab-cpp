@@ -17,9 +17,38 @@ bool doFind()
 	int capacity;
 	float price;
 
-	efiilj::IOUtils::getNum<float>(price, "Minimum capacity: ", "Enter an integer > 0", 0);
-	pool.findVehicle();
-	return true;
+	if (efiilj::IOUtils::getNum<float>(price, '0', "Max price: ") && efiilj::IOUtils::getNum<int>(capacity, "Min capacity: "))
+	{
+		vector<efiilj::PoolItem*> matches = pool.findVehicles(capacity, price);
+
+		cout << "\n" << matches.size() << " matches:\n\n";
+
+		if (matches.size() > 0)
+		{
+			int select, count;
+			efiilj::Vehicle vehicle;
+
+			for (int i = 0; i < matches.size(); i++)
+			{
+				vehicle = matches[i]->vehicle;
+
+				cout << (i + 1) << ". " << vehicle.model
+					<< " [ Qty: " << matches[i]->available()
+					<< " | Seats: " << vehicle.capacity
+					<< " | Cost/hr: " << vehicle.costPerHour
+					<< " | Eff: " << vehicle.fuelConsumption
+					<< " ]\n";
+			}
+
+			if (efiilj::IOUtils::getNum<int>(select, '0', "Rent vehicle?\n> ", 1, matches.size()) && efiilj::IOUtils::getNum<int>(count, '0', "Quantity: ", 1)) {
+				if (matches[select - 1]->rentVehicle(count))
+					cout << "Vehicle selected for rental.\nPlease speak with an AVIS representative for further assistance.\n";
+				else
+					cout << "Unable to select vehicle for rental (not available).\n";
+			}
+		}
+	}
+	return false;
 }
 
 int main()

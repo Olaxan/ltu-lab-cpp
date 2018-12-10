@@ -15,10 +15,6 @@ namespace efiilj
 
 		int select;
 
-		stringstream ss;
-		ss << "Please select a number " << to_string(1 - allowExit) << " - " << to_string(_items.size()) << ".";
-		std::string error = ss.str();
-
 		while (true)
 		{
 			if (title.length() > 0)
@@ -28,7 +24,7 @@ namespace efiilj
 
 			listItems();
 
-			if (efiilj::IOUtils::getNum<int>(select, prompt, error, 1 - allowExit, _items.size()))
+			if (efiilj::IOUtils::getNum<int>(select, prompt, 1 - allowExit, _items.size()))
 			{
 				if (select == 0 || _items[select - 1].invoke())
 					return true;

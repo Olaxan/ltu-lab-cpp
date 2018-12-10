@@ -5,6 +5,26 @@ namespace efiilj
 	PoolItem::PoolItem() { }
 	PoolItem::PoolItem(efiilj::Vehicle vehicle, int total) : vehicle(vehicle), _total(total), _current(total) { }
 
+	bool PoolItem::rentVehicle(int count)
+	{
+		if (_current >= count)
+		{
+			_current -= count;
+			return true;
+		}
+		else return false;
+	}
+
+	bool PoolItem::returnVehicle(int count)
+	{
+		if ((_current + count) <= _total)
+		{
+			_current += count;
+			return true;
+		}
+		else return false;
+	}
+
 	const int& PoolItem::total() const
 	{
 		return this->_total;

@@ -2,6 +2,7 @@
 
 #include "utilslib.h"
 
+#include <typeinfo>
 #include <stdexcept>
 #include <iostream>
 #include <sstream>
@@ -18,13 +19,28 @@ namespace efiilj {
 	}
 
 	template <typename T>
-	bool IOUtils::getNum(T &out, std::string exit, std::string prompt, std::string error, int min, int max) {
+	bool IOUtils::getNum(T &out, char exit, std::string prompt, int min, int max) {
 
 		static_assert(std::is_arithmetic<T>::value, "Type must be arithmetic");
 
-		stringstream ss;
-		string input;
+		stringstream err, ss;
+		string input, error;
 		T test;
+
+		err << "Please enter '" << typeid(T).name() << "' type";
+		if (min != INT_MIN && max != INT_MAX)
+			err << " between " << min << " and " << max;
+		else if (min != INT_MIN)
+			err << " above " << min;
+		else if (max != INT_MAX)
+			err << " below " << max;
+
+		err << ".\n";
+
+		if (exit != '\0')
+			err << "'" << exit << "' to exit.\n";
+
+		error = err.str();
 
 		while (true) {
 
@@ -33,7 +49,7 @@ namespace efiilj {
 
 			if (input.length() > 0) {
 
-				if (input == exit)
+				if (input.length() == 1 && input[0] == exit)
 					return false;
 
 				ss.clear();
@@ -55,12 +71,8 @@ namespace efiilj {
 	}
 
 	template <typename T>
-	bool IOUtils::getNum(T &out, char exit, std::string prompt, std::string error, int min, int max) {
-		return IOUtils::getNum(out, string(1, exit), prompt, error, min, max);
-	}
-
-	template <typename T>
-	bool IOUtils::getNum(T &out, std::string prompt, std::string error, int min, int max) {
-		return IOUtils::getNum(out, '\0', prompt, error, min, max);
+	bool IOUtils::getNum(T &out, std::string prompt, int min, int max)
+	{
+		return getNum<T>(out, '\0', prompt, min, max);
 	}
 }
