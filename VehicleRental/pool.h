@@ -11,6 +11,7 @@ namespace efiilj
 	private:
 		int _total;
 		int _current;
+
 	public:
 		PoolItem();
 		PoolItem(Vehicle, int total);
@@ -41,7 +42,6 @@ namespace efiilj
 
 		void addVehicle();
 		void addVehicle(Vehicle vehicle, int count);
-		void addVehicle(Vehicle vehicle, int count, float costPerHour);
 
 		PoolItem* findSingleVehicle(Vehicle vehicle);
 		std::vector<PoolItem*> findVehicles(int capacity, float costPerHour);

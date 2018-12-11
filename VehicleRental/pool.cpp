@@ -35,11 +35,6 @@ namespace efiilj
 			(*item) += count;
 
 	}
-
-	void Pool::addVehicle(Vehicle vehicle, int count, float costPerHour)
-	{
-		cout << "NOOTL?";
-	}
 	
 	PoolItem* Pool::findSingleVehicle(Vehicle vehicle)
 	{

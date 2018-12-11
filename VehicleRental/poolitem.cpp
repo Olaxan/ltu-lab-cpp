@@ -2,6 +2,7 @@
 
 namespace efiilj
 {
+
 	PoolItem::PoolItem() { }
 	PoolItem::PoolItem(efiilj::Vehicle vehicle, int total) : vehicle(vehicle), _total(total), _current(total) { }
 
