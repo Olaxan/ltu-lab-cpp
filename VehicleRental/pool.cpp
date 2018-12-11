@@ -40,7 +40,7 @@ namespace efiilj
 	{
 		PoolItem* item = nullptr;
 
-		for (int i = 0; i < _vehicles.size(); i++)
+		for (unsigned int i = 0; i < _vehicles.size(); i++)
 		{
 			if (_vehicles[i].vehicle == vehicle)
 			{
@@ -56,7 +56,7 @@ namespace efiilj
 	{
 		vector<PoolItem*> matches;
 
-		for (int i = 0; i < _vehicles.size(); i++)
+		for (unsigned int i = 0; i < _vehicles.size(); i++)
 		{
 			if (_vehicles[i].vehicle.capacity >= capacity && _vehicles[i].vehicle.costPerHour <= costPerHour)
 				matches.push_back(&_vehicles[i]);
@@ -66,7 +66,7 @@ namespace efiilj
 
 	bool Pool::vehicleExists(const Vehicle & vehicle) const
 	{
-		for (int i = 0; i < _vehicles.size(); i++)
+		for (unsigned int i = 0; i < _vehicles.size(); i++)
 		{
 			if (_vehicles[i].vehicle == vehicle)
 				return true;
@@ -77,7 +77,7 @@ namespace efiilj
 
 	bool Pool::templateExists(const Vehicle& vehicle) const
 	{
-		for (int i = 0; i < _vehicleTemplates.size(); i++)
+		for (unsigned int i = 0; i < _vehicleTemplates.size(); i++)
 		{
 			if (_vehicleTemplates[i] == vehicle)
 				return true;
@@ -146,7 +146,7 @@ namespace efiilj
 			cout << "No templates available.\n";
 		else
 		{
-			for (int i = 0; i < _vehicleTemplates.size(); i++)
+			for (unsigned int i = 0; i < _vehicleTemplates.size(); i++)
 			{
 				cout << i + 1 << ". " << _vehicleTemplates[i].model << "\n";
 			}

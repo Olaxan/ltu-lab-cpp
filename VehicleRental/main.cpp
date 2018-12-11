@@ -28,7 +28,7 @@ bool doFind()
 			int select, count;
 			efiilj::Vehicle vehicle;
 
-			for (int i = 0; i < matches.size(); i++)
+			for (unsigned int i = 0; i < matches.size(); i++)
 			{
 				vehicle = matches[i]->vehicle;
 
