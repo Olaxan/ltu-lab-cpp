@@ -25,7 +25,10 @@ namespace efiilj
 	void Pool::addVehicle(Vehicle vehicle, int count)
 	{
 		if (!templateExists(vehicle))
+		{
 			this->_vehicleTemplates.push_back(vehicle);
+			cout << "\n'" << vehicle.model << "' added to vehicle templates.";
+		}
 
 		PoolItem* item = findSingleVehicle(vehicle);
 
@@ -34,6 +37,7 @@ namespace efiilj
 		else
 			(*item) += count;
 
+		cout << "\n'" << vehicle.model << "' (" << count << ") added to pool.\n";
 	}
 	
 	PoolItem* Pool::findSingleVehicle(Vehicle vehicle)
@@ -139,16 +143,33 @@ namespace efiilj
 		return false;
 	}
 
+	std::string Pool::to_string()
+	{
+		std::stringstream ss;
+
+		if (_vehicles.size() == 0)
+			cout << "No vehicles available.\n";
+		else
+		{
+			for (unsigned int i = 0; i < _vehicles.size(); i++)
+			{
+				cout << i + 1 << ". " << _vehicles[i].to_string();
+			}
+		}
+
+		return ss.str();
+	}
+
 
 	void Pool::listTemplates()
 	{
-		if (count() == 0)
+		if (_vehicleTemplates.size() == 0)
 			cout << "No templates available.\n";
 		else
 		{
 			for (unsigned int i = 0; i < _vehicleTemplates.size(); i++)
 			{
-				cout << i + 1 << ". " << _vehicleTemplates[i].model << "\n";
+				cout << i + 1 << ". " << _vehicleTemplates[i].to_string();
 			}
 		}
 		cout << "\n";

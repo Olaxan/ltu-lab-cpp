@@ -30,14 +30,7 @@ bool doFind()
 
 			for (unsigned int i = 0; i < matches.size(); i++)
 			{
-				vehicle = matches[i]->vehicle;
-
-				cout << (i + 1) << ". " << vehicle.model
-					<< " [ Qty: " << matches[i]->available()
-					<< " | Seats: " << vehicle.capacity
-					<< " | Cost/hr: " << vehicle.costPerHour
-					<< " | Eff: " << vehicle.fuelConsumption
-					<< " ]\n";
+				cout << (i + 1) << ". " << matches[i]->to_string();
 			}
 
 			if (efiilj::IOUtils::getNum<int>(select, '0', "\nRent vehicle?\n> ", 1, matches.size()) && efiilj::IOUtils::getNum<int>(count, '0', "Quantity: ", 1)) {
@@ -53,10 +46,18 @@ bool doFind()
 	return false;
 }
 
+bool doList()
+{
+	pool.to_string();
+
+	return false;
+}
+
 int main()
 {
-	efiilj::Menu mainMenu = efiilj::Menu("=====[ Main Menu ]=====");
+	efiilj::Menu mainMenu = efiilj::Menu("=======[ Main Menu ]====================================================================================================");
 	mainMenu.addItem("Register new vehicle", doAdd);
 	mainMenu.addItem("Search vehicle registry", doFind);
+	mainMenu.addItem("Print registry", doList);
 	mainMenu.show();
 }

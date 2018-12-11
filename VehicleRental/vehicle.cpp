@@ -1,5 +1,7 @@
 #include "vehicle.h"
 
+#include <sstream>
+
 //Implement hashing functions
 namespace std
 {
@@ -35,6 +37,19 @@ namespace efiilj
 		model(modelName), costPerHour(costPerHour), fuelConsumption(fuelConsumption), capacity(capacity) { }
 
 
+
+	std::string Vehicle::to_string()
+	{
+		std::stringstream ss;
+
+		ss << model
+			<< " [ Seats: " << capacity
+			<< " | Cost/hr: " << costPerHour
+			<< " | Eff: " << fuelConsumption
+			<< " ]\n";
+
+		return ss.str();
+	}
 
 	bool Vehicle::operator < (const Vehicle& other) const
 	{

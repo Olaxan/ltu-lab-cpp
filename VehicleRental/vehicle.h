@@ -17,6 +17,8 @@ namespace efiilj
 		float fuelConsumption = 0;
 		int capacity = 0;
 
+		std::string to_string();
+
 		bool operator < (const Vehicle& other) const;
 		bool operator == (const Vehicle& other) const;
 		bool operator != (const Vehicle& other) const;

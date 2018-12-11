@@ -1,5 +1,7 @@
 #include "pool.h"
 
+#include <sstream>
+
 namespace efiilj
 {
 
@@ -24,6 +26,20 @@ namespace efiilj
 			return true;
 		}
 		else return false;
+	}
+
+	std::string PoolItem::to_string()
+	{
+		std::stringstream ss;
+
+		ss << vehicle.model
+			<< " [ Qty: " << available()
+			<< " | Seats: " << vehicle.capacity
+			<< " | Cost/hr: " << vehicle.costPerHour
+			<< " | Eff: " << vehicle.fuelConsumption
+			<< " ]\n";
+
+		return ss.str();
 	}
 
 	const int& PoolItem::total() const

@@ -21,6 +21,8 @@ namespace efiilj
 		bool rentVehicle(int count = 1);
 		bool returnVehicle(int count = 1);
 
+		std::string to_string();
+
 		const int& total() const;
 		bool total(const int& total);
 
@@ -53,6 +55,8 @@ namespace efiilj
 		bool returnVehicle(PoolItem &item, int count = 1);
 
 		bool showAddVehicleDialog(Vehicle& vehicle);
+
+		std::string to_string();
 
 		void listTemplates();
 		int count();
