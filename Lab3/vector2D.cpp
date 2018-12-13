@@ -82,7 +82,7 @@ namespace efiilj
 
 	std::string Vector2D::to_string() const
 	{
-		return std::to_string(this->x()) + ", " + std::to_string(this->y());
+		return std::to_string(this->x()) + ";\n" + std::to_string(this->y()) + ";\n";
 	}
 
 	Vector2D::~Vector2D() { }

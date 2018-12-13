@@ -33,7 +33,7 @@ namespace efiilj
 		std::stringstream ss;
 
 		ss << vehicle.model
-			<< " [ Qty: " << available()
+			<< " [ Qty: " << available() << "/" << total()
 			<< " | Seats: " << vehicle.capacity
 			<< " | Cost/hr: " << vehicle.costPerHour
 			<< " | Eff: " << vehicle.fuelConsumption

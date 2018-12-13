@@ -31,8 +31,8 @@ int main()
 
 	cout << vec.dot(vec) << "\n";
 
-	cout << vec.norm() << "\n";
+	cout << "\n" << vec.norm() << "\n";
 
-	cout << (vec * vec).to_string() << "\n";
+	cout << "\n" << (vec * vec).to_string() << "\n";
 
 }
