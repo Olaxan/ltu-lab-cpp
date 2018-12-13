@@ -4,7 +4,7 @@
 
 namespace efiilj
 {
-
+	
 	class Matrix2D
 	{
 	private:
@@ -29,11 +29,10 @@ namespace efiilj
 		const float& d() const { return this->_arr[3]; }
 		void d(const float& d) { this->_arr[3] = d; }
 
-		//Applies a rotation the the matrix (in degrees). Returns a pointer to the new resulting Matrix2D.
-		Matrix2D* getRotated(const float &angle) const;
+		static Matrix2D getRotationMatrix(const float &deg);
 
 		//Switch rows/columns in the matrix. Returns a pointer to the new resulting Matrix2D. 
-		Matrix2D* getTransposed() const;
+		Matrix2D getTransposed() const;
 
 		std::string to_string();
 
@@ -67,7 +66,7 @@ namespace efiilj
 		float norm() const;
 
 		//Performs a matrix transformation on the Vector2D. Returns a pointer to the new resulting Vector2D.
-		Vector2D* getTransformed(const Matrix2D &trans) const;
+		Vector2D getTransformed(const Matrix2D &trans) const;
 
 		std::string to_string() const;
 

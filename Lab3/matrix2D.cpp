@@ -49,14 +49,14 @@ namespace efiilj
 		return *this;
 	}
 
-	Matrix2D* Matrix2D::getRotated(const float &angle) const
+	Matrix2D Matrix2D::getRotationMatrix(const float & deg)
 	{
-		return new Matrix2D((*this) * Matrix2D(cos(angle), -sin(angle), sin(angle), cos(angle)));
+		return Matrix2D(cos(deg), -sin(deg), sin(deg), cos(deg));
 	}
 
-	Matrix2D* Matrix2D::getTransposed() const
+	Matrix2D Matrix2D::getTransposed() const
 	{
-		return new Matrix2D(this->a(), this->c(), this->b(), this->d());
+		return Matrix2D(this->a(), this->c(), this->b(), this->d());
 	}
 
 	std::string Matrix2D::to_string()

@@ -75,9 +75,9 @@ namespace efiilj
 		return sqrt(powf(this->x(), 2) + powf(this->y(), 2));
 	}
 
-	Vector2D* Vector2D::getTransformed(const Matrix2D &trans) const
+	Vector2D Vector2D::getTransformed(const Matrix2D &trans) const
 	{
-		return new Vector2D((*this) * trans);
+		return Vector2D((*this) * trans);
 	}
 
 	std::string Vector2D::to_string() const

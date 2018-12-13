@@ -26,6 +26,11 @@
   <ItemGroup>
     <ClInclude Include="matharr.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilsLib\UtilsLib.vcxproj">
+      <Project>{ef623281-c2a0-4259-81d9-431aaf0a4355}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{853EE639-6CC0-4655-AA89-B7BA1F243987}</ProjectGuid>
