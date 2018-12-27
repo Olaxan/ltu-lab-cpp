@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <sstream>
 #include <iostream>
+#include "sarray.h"
 
 namespace efiilj
 {
@@ -32,7 +33,7 @@ namespace efiilj
 	template <typename T>
 	T SortedArray<T>::getAt(int index)
 	{
-		return *(_items + sizeof(T) * index);
+		return _items[index];
 	}
 
 	template <typename T>
@@ -47,10 +48,23 @@ namespace efiilj
 	template <typename T>
 	int SortedArray<T>::find(T value)
 	{
-		for (int i = 0; i < _count; i++)
+		int upper = _count;
+		int lower = 0;
+		int middle;
+		T test;
+
+		while (lower <= upper)
 		{
-			if (_items[i] == value)
-				return i;
+			middle = lower + (upper - 1) / 2;
+			test = _items[middle];
+
+			if (value == test)
+				return middle;
+
+			if (reverse ^ comparator(value, test))
+				upper = middle - 1;
+			else
+				lower = middle + 1;
 		}
 
 		return -1;
@@ -59,13 +73,7 @@ namespace efiilj
 	template <typename T>
 	bool SortedArray<T>::exists(T value)
 	{
-		for (int i = 0; i < _count; i++)
-		{
-			if (_items[i] == value)
-				return true;
-		}
-
-		return false;
+		return (find(value) != -1);
 	}
 
 	template <typename T>
@@ -73,7 +81,7 @@ namespace efiilj
 	{
 		for (int i = 0; i < _count; i++)
 		{
-			if (_items[i] < value)
+			if (reverse ^ comparator(value, _items[i]))
 			{
 				addAt(i, value);
 				return;
@@ -85,14 +93,12 @@ namespace efiilj
 	template <typename T>
 	void SortedArray<T>::remove(T value)
 	{
-		int countBefore = _count;
-
-		for (int i = 0; i < countBefore; i++)
+		for (int i = 0; i < _count;)
 		{
-			if (*(_items + sizeof(T) * i) == value)
-			{
+			if (_items[i] == value)
 				remAt(i);
-			}
+			else
+				i++;
 		}
 	}
 
@@ -119,5 +125,4 @@ namespace efiilj
 	{
 		return _count;
 	}
-
 }

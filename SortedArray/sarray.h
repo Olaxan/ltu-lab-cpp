@@ -22,6 +22,13 @@ namespace efiilj
 
 		SortedArray();
 
+		//Comparator determines manner of sorting the array.
+		//Should return 'true' if left-hand is greater than right-hand.
+		//Use for data types where custom comparison is necessary.
+		bool(*comparator)(T a, T b) = [](T a, T b) -> bool { return a > b; };
+
+		bool reverse = true;
+
 		int	find(T value);
 		bool exists(T value);
 		void insert(T value);

@@ -18,7 +18,7 @@ bool doAdd()
 bool doRemove()
 {
 	int user;
-	efiilj::IOUtils::getNum<int>(user, "Remove item: ");
+	efiilj::IOUtils::getNum<int>(user, "Remove item(s): ");
 	arr.remove(user);
 	std::cout << "Array size is now " << arr.count() << ".\n" << arr.to_string() << "\n";
 
