@@ -48,23 +48,21 @@ namespace efiilj
 	template <typename T>
 	int SortedArray<T>::find(T value)
 	{
-		int upper = _count;
+		int upper = _count - 1;
 		int lower = 0;
-		int middle;
-		T test;
+		int mid;
 
 		while (lower <= upper)
 		{
-			middle = lower + (upper - 1) / 2;
-			test = _items[middle];
+			mid = (lower + upper) / 2;
 
-			if (value == test)
-				return middle;
+			if (_items[mid] == value)
+				return mid;
 
-			if (reverse ^ comparator(value, test))
-				upper = middle - 1;
+			if (descending ^ comparator(value, _items[mid]))
+				lower = mid + 1;
 			else
-				lower = middle + 1;
+				upper = mid - 1;
 		}
 
 		return -1;
@@ -81,7 +79,7 @@ namespace efiilj
 	{
 		for (int i = 0; i < _count; i++)
 		{
-			if (reverse ^ comparator(value, _items[i]))
+			if (descending ^ comparator(_items[i], value))
 			{
 				addAt(i, value);
 				return;
