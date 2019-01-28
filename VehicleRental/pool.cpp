@@ -16,7 +16,7 @@ namespace efiilj
 	{
 		Vehicle v;
 		int count;
-		if (showAddVehicleDialog(v) && IOUtils::getNum<int>(count, '0', "\nCount: ", 0))
+		if (showAddVehicleDialog(v) && IOUtils::Input<int>(count, '0', "\nCount: ", 0))
 		{
 			addVehicle(v, count);
 		}
@@ -111,7 +111,7 @@ namespace efiilj
 		cout << "0. Exit\n";
 
 		int select;
-		if (IOUtils::getNum<int>(select, '0', "> ", 0, count() + 1) && select != 0)
+		if (IOUtils::Input<int>(select, '0', "> ", 0, count() + 1) && select != 0)
 		{
 
 			std::string type;
@@ -123,9 +123,9 @@ namespace efiilj
 				cout << "Type: ";
 				getline(cin, type);
 
-				IOUtils::getNum<float>(cost, "Rental cost: ", 0);
-				IOUtils::getNum<float>(fuel, "Fuel efficiency: ", 0);
-				IOUtils::getNum<int>(capacity, "Seat capacity: ", 0);
+				IOUtils::Input<float>(cost, "Rental cost: ", 0);
+				IOUtils::Input<float>(fuel, "Fuel efficiency: ", 0);
+				IOUtils::Input<int>(capacity, "Seat capacity: ", 0);
 
 				if (type.length() > 0)
 				{

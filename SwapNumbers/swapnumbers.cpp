@@ -8,10 +8,10 @@ int main(){
 
 	float a, b;
 
-	efiilj::IOUtils::getNum<float>(a, "a: ");
-	efiilj::IOUtils::getNum<float>(b, "b: ");
+	efiilj::IOUtils::Input<float>(a, "a: ");
+	efiilj::IOUtils::Input<float>(b, "b: ");
 
-	efiilj::GenUtils::swap(a, b);
+	efiilj::GenUtils::Swap(a, b);
 
 	printf_s("a: %f\nb: %f\n", a, b);
 

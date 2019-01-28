@@ -17,7 +17,7 @@ bool doFind()
 	int capacity;
 	float price;
 
-	if (efiilj::IOUtils::getNum<float>(price, '0', "Max price: ") && efiilj::IOUtils::getNum<int>(capacity, "Min capacity: "))
+	if (efiilj::IOUtils::Input<float>(price, '0', "Max price: ") && efiilj::IOUtils::Input<int>(capacity, "Min capacity: "))
 	{
 		vector<efiilj::PoolItem*> matches = pool.findVehicles(capacity, price);
 
@@ -33,7 +33,7 @@ bool doFind()
 				cout << (i + 1) << ". " << matches[i]->to_string();
 			}
 
-			if (efiilj::IOUtils::getNum<int>(select, '0', "\nRent vehicle?\n> ", 1, matches.size()) && efiilj::IOUtils::getNum<int>(count, '0', "Quantity: ", 1)) {
+			if (efiilj::IOUtils::Input<int>(select, '0', "\nRent vehicle?\n> ", 1, matches.size()) && efiilj::IOUtils::Input<int>(count, '0', "Quantity: ", 1)) {
 				if (matches[select - 1]->rentVehicle(count))
 					cout << "\nVehicle selected for rental.\n";
 				else

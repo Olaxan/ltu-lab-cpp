@@ -27,7 +27,7 @@ int main() {
 	if (dict->load(DEFAULT_PATH))
 		cout << "\nLoaded words from '" << DEFAULT_PATH << "'!\n";
 
-	while (efiilj::IOUtils::getNum<int>(select, "0")) {
+	while (efiilj::IOUtils::Input<int>(select, "0")) {
 
 		switch (select) {
 		case 1: {
@@ -72,7 +72,7 @@ int main() {
 			break;
 		}
 		case 4: {
-			efiilj::ToddUtils::createTodd();
+			efiilj::ToddUtils::CreateTodd();
 			break;
 		}
 		default:

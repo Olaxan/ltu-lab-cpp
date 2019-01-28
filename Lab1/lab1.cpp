@@ -17,7 +17,7 @@ int main() {
 		"6. Mortgage Calculator\n"
 		"0. Exit\n");
 
-	while (efiilj::IOUtils::getNum<int>(select, "> ", "0", 0, 6))
+	while (efiilj::IOUtils::Input<int>(select, "> ", "0", 0, 6))
 	{
 
 		switch (select) {
@@ -26,7 +26,7 @@ int main() {
 				int p;
 
 				printf("How many primes do you want to calculate?\nThis operation may take a very long time to complete for large numbers.\n");
-				if (efiilj::IOUtils::getNum<int>(p, "> ", "0"))
+				if (efiilj::IOUtils::Input<int>(p, "> ", "0"))
 					efiilj::Lab1::prime(p);
 				break;
 			}
@@ -35,7 +35,7 @@ int main() {
 				int b;
 
 				printf("How many numbers do you want to bounce?\n");
-				if (efiilj::IOUtils::getNum<int>(b, "> ", "0"))
+				if (efiilj::IOUtils::Input<int>(b, "> ", "0"))
 					efiilj::Lab1::bounce(b);
 				break;
 			}
@@ -57,7 +57,7 @@ int main() {
 			{
 				int x, y;
 
-				if (efiilj::IOUtils::getNum<int>(x, "Enter X dimension: ", "0") && efiilj::IOUtils::getNum<int>(y, "Enter Y dimension: ", "0"))
+				if (efiilj::IOUtils::Input<int>(x, "Enter X dimension: ", "0") && efiilj::IOUtils::Input<int>(y, "Enter Y dimension: ", "0"))
 					efiilj::Lab1::arrays(x, y);
 				break;
 			}
@@ -66,7 +66,7 @@ int main() {
 				int f;
 
 				printf("How many people do you want to feed?\n");
-				if (efiilj::IOUtils::getNum<int>(f))
+				if (efiilj::IOUtils::Input<int>(f))
 					efiilj::Lab1::cake(f);
 				break;
 			}
@@ -76,9 +76,9 @@ int main() {
 
 				printf("Please enter the following information about your loan:\nAmount borrowed, loan interest, and years to repay.\n");
 
-				if (efiilj::IOUtils::getNum<float>(amount, "AMOUNT: ")
-					&& efiilj::IOUtils::getNum<float>(interest, "INTEREST [0 - 1]: ")
-					&& efiilj::IOUtils::getNum<float>(years, "YEARS: ")
+				if (efiilj::IOUtils::Input<float>(amount, "AMOUNT: ")
+					&& efiilj::IOUtils::Input<float>(interest, "INTEREST [0 - 1]: ")
+					&& efiilj::IOUtils::Input<float>(years, "YEARS: ")
 					)
 					efiilj::Lab1::cost(amount, interest, years);
 				break;

@@ -28,14 +28,14 @@ namespace efiilj {
 				efiilj::Person owner = efiilj::Person(name, address, number);
 
 				cout << "\n=== TYRE SPECIFICATIONS ===\n";
-				if (cout << "Brand: " && getline(cin, brand) && efiilj::IOUtils::getNum<float>(width, "Width: ") && efiilj::IOUtils::getNum<int>(diameter, "Diameter: ")) {
+				if (cout << "Brand: " && getline(cin, brand) && efiilj::IOUtils::Input<float>(width, "Width: ") && efiilj::IOUtils::Input<int>(diameter, "Diameter: ")) {
 
 					for (int i = 0; i < 4; i++) {
 						tires[i] = *new efiilj::Tire(brand, width, diameter);
 					}
 
 					cout << "\n=== ENGINE SPECIFICATIONS ===\n";
-					if (cout << "Model: " && getline(cin, model) && efiilj::IOUtils::getNum<float>(horsepower, "Horsepower: ") && efiilj::IOUtils::getNum<int>(cylinders, "Cylinders: ")) {
+					if (cout << "Model: " && getline(cin, model) && efiilj::IOUtils::Input<float>(horsepower, "Horsepower: ") && efiilj::IOUtils::Input<int>(cylinders, "Cylinders: ")) {
 						efiilj::Engine engine = efiilj::Engine(model, horsepower, cylinders);
 						efiilj::Car car = efiilj::Car(engine, tires, type, owner);
 						cout << "\n=== ORDER SUMMARY ===\n";

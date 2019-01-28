@@ -8,7 +8,7 @@ auto arr = efiilj::SortedArray<int>();
 bool doAdd()
 {
 	int user;
-	efiilj::IOUtils::getNum<int>(user, "Add item: ");
+	efiilj::IOUtils::Input<int>(user, "Add item: ");
 	arr.insert(user);
 	std::cout << "Array size is now " << arr.count() << ".\n" << arr.to_string() << "\n";
 
@@ -18,7 +18,7 @@ bool doAdd()
 bool doRemove()
 {
 	int user;
-	efiilj::IOUtils::getNum<int>(user, "Remove item(s): ");
+	efiilj::IOUtils::Input<int>(user, "Remove item(s): ");
 	arr.remove(user);
 	std::cout << "Array size is now " << arr.count() << ".\n" << arr.to_string() << "\n";
 
@@ -28,7 +28,7 @@ bool doRemove()
 bool doFind()
 {
 	int user, index;
-	efiilj::IOUtils::getNum<int>(user, "Find item: ");
+	efiilj::IOUtils::Input<int>(user, "Find item: ");
 	index = arr.find(user);
 	std::cout << "Element index: " << index << ".\n" << arr.to_string() << "\n";
 

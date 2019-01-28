@@ -20,7 +20,7 @@ int main() {
 		<< "5. Car\n"
 		<< "0. Exit\n";
 
-	while (efiilj::IOUtils::getNum<int>(select, '0', "> ", 0, 5))
+	while (efiilj::IOUtils::Input<int>(select, '0', "> ", 0, 5))
 	{
 
 		switch (select)
@@ -69,12 +69,12 @@ int main() {
 				int numEmployees;
 
 				cout << "Enter number of employees.\n";
-				if (efiilj::IOUtils::getNum<int>(numEmployees, "0")) {
+				if (efiilj::IOUtils::Input<int>(numEmployees, "0")) {
 					double* arr = new double[numEmployees];
 					for (int i = 0; i < numEmployees; i++)
 					{
 						string prompt = "User " + to_string(i + 1) + ": ";
-						if (efiilj::IOUtils::getNum<double>(arr[i], prompt))
+						if (efiilj::IOUtils::Input<double>(arr[i], prompt))
 							continue;
 
 						arr[i] = 0;
