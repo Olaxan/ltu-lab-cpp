@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "utilslib.h"
 
 #include <stdexcept>
@@ -8,7 +9,7 @@ using namespace std;
 
 namespace efiilj {
 
-	vector<string> GenUtils::split(string input, string splitter) {
+	vector<string> GenUtils::Split(string input, string splitter) {
 
 		int index = input.find_first_of(splitter);
 		vector<string> split;

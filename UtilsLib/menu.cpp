@@ -1,8 +1,7 @@
+#include "stdafx.h"
 #include "menu.h"
 
 #include <iostream>
-
-/*TODO: Implement WinAPI to detect keypresses (optionally) directly.*/
 
 namespace efiilj
 {
@@ -24,10 +23,10 @@ namespace efiilj
 
 			listItems();
 
-			if (efiilj::IOUtils::getNum<int>(select, prompt, 1 - allowExit, _items.size()))
+			if (efiilj::IOUtils::Input<int>(select, prompt, 1 - allowExit, _items.size()))
 			{
 				cout << "\n";
-				if (select == 0 || _items[select - 1].invoke())
+				if (select == 0 || _items[select - 1].Invoke())
 					return true;
 			}
 			else return false;

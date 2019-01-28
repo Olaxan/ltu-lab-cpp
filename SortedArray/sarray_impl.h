@@ -77,6 +77,7 @@ namespace efiilj
 	template <typename T>
 	void SortedArray<T>::insert(T value)
 	{
+		//TODO: This could use binary search for efficiency.
 		for (int i = 0; i < _count; i++)
 		{
 			if (descending ^ comparator(_items[i], value))

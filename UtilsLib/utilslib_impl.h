@@ -12,14 +12,14 @@ using namespace std;
 namespace efiilj {
 
 	template <typename T>
-	void GenUtils::swap(T &a, T &b) {
+	void GenUtils::Swap(T &a, T &b) {
 		T temp = a;
 		a = b;
 		b = temp;
 	}
 
 	template <typename T>
-	bool IOUtils::getNum(T &out, char exit, std::string prompt, int min, int max) {
+	bool IOUtils::Input(T &out, char exit, std::string prompt, int min, int max) {
 
 		static_assert(std::is_arithmetic<T>::value, "Type must be arithmetic");
 
@@ -73,8 +73,12 @@ namespace efiilj {
 	}
 
 	template <typename T>
-	bool IOUtils::getNum(T &out, std::string prompt, int min, int max)
+	bool IOUtils::Input(T &out, std::string prompt, int min, int max)
 	{
-		return getNum<T>(out, '\0', prompt, min, max);
+		return Input<T>(out, '\0', prompt, min, max);
 	}
 }
+
+extern UTILSLIB_API int nUtilsLib;
+
+UTILSLIB_API int fnUtilsLib(void);

@@ -27,7 +27,7 @@ namespace efiilj
 		//Use for data types where custom comparison is necessary.
 		bool(*comparator)(T a, T b) = [](T a, T b) -> bool { return a > b; };
 
-		//Default: false - items in ascending size.
+		//Default: false - items in ascending order.
 		bool descending = false;
 
 		int	find(T value);
