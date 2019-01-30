@@ -154,6 +154,9 @@
     <ClInclude Include="sarray.h" />
     <ClInclude Include="sarray_impl.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dummy.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

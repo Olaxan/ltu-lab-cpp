@@ -39,9 +39,9 @@ int main()
 {
 
 	auto main = efiilj::Menu("Main operations menu");
-	main.addItem("Add item to sorted array", doAdd);
-	main.addItem("Remove an item from sorted array", doRemove);
-	main.addItem("Find item in sorted array", doFind);
-	main.show();
+	main.AddItem("Add item to sorted array", doAdd);
+	main.AddItem("Remove an item from sorted array", doRemove);
+	main.AddItem("Find item in sorted array", doFind);
+	main.Show();
 
 }

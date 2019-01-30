@@ -8,7 +8,7 @@ namespace efiilj
 
 	Menu::Menu(std::string title, std::string prompt) : title(title), prompt(prompt) { }
 
-	bool Menu::show() const
+	bool Menu::Show() const
 	{
 		cout << "\n";
 
@@ -21,7 +21,7 @@ namespace efiilj
 				cout << title << "\n\n";
 			}
 
-			listItems();
+			ListItems();
 
 			if (efiilj::IOUtils::Input<int>(select, prompt, 1 - allowExit, _items.size()))
 			{
@@ -35,18 +35,18 @@ namespace efiilj
 		}
 	}
 
-	void Menu::addItem(std::string name, bool(*func)())
+	void Menu::AddItem(std::string name, bool(*func)())
 	{
 		_items.push_back(MenuItem(this, name, func));
 	}
 
-	void Menu::addItem(std::string name, Menu* subMenu)
+	void Menu::AddItem(std::string name, Menu* subMenu)
 	{
 		subMenu->_isSubmenu = true;
 		_items.push_back(MenuItem(this, name, subMenu));
 	}
 
-	void Menu::listItems() const
+	void Menu::ListItems() const
 	{
 		int i = 1;
 		for (auto it = _items.begin(); it != _items.end(); it++)

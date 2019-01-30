@@ -24,7 +24,7 @@ namespace efiilj
 	{
 		if (hasSubmenu)
 		{
-			this->subMenu->show();
+			this->subMenu->Show();
 			return false;
 		}
 		else

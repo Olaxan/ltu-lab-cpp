@@ -55,9 +55,9 @@ bool doList()
 
 int main()
 {
-	efiilj::Menu mainMenu = efiilj::Menu("=======[ Main Menu ]====================================================================================================");
-	mainMenu.addItem("Register new vehicle", doAdd);
-	mainMenu.addItem("Search vehicle registry", doFind);
-	mainMenu.addItem("Print registry", doList);
-	mainMenu.show();
+	efiilj::Menu mainMenu = efiilj::Menu("=======[ Main Menu ]=======");
+	mainMenu.AddItem("Register new vehicle", doAdd);
+	mainMenu.AddItem("Search vehicle registry", doFind);
+	mainMenu.AddItem("Print registry", doList);
+	mainMenu.Show();
 }

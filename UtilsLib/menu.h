@@ -1,5 +1,11 @@
 #pragma once
 
+#ifdef UTILSLIB_EXPORTS
+#define UTILSLIB_API __declspec(dllexport)
+#else
+#define UTILSLIB_API __declspec(dllimport)
+#endif
+
 #include "utilslib.h"
 
 #include <string>
@@ -7,18 +13,19 @@
 
 namespace efiilj
 {
-
-	class Menu
+	
+	class UTILSLIB_API Menu
 	{
-	public:
+	private:
 
-		class MenuItem
+		class UTILSLIB_API MenuItem
 		{
 		private:
 			Menu* subMenu;
 			const Menu* parent;
 			bool(*func)();
 			bool hasSubmenu;
+
 		public:
 			MenuItem();
 			MenuItem(const Menu* parent, std::string name, bool(*func)());
@@ -28,9 +35,15 @@ namespace efiilj
 
 			bool Invoke() const;
 
-			friend class Menu;
+			//friend class Menu;
 		};
 
+		std::vector<MenuItem> _items;
+		bool _isSubmenu = false;
+
+		//friend class MenuItem;
+
+	public:
 		Menu(std::string title = "", std::string prompt = "> ");
 
 		std::string title;
@@ -38,20 +51,17 @@ namespace efiilj
 		
 		bool allowExit = true;
 
-		void addItem(std::string name, bool(*func)());
-		void addItem(std::string name, Menu* subMenu);
-		void removeItem(std::string item);
-		void listItems() const;
+		void AddItem(std::string name, bool(*func)());
+		void AddItem(std::string name, Menu* subMenu);
+		void RemoveItem(std::string item);
+		void ListItems() const;
 		
-		bool show() const;
+		bool Show() const;
 
 		~Menu();
 
-	private:
-		std::vector<MenuItem> _items;
-		bool _isSubmenu = false;
-
-		friend class MenuItem;
+		//This is probably very bad
+		friend std::hash<MenuItem>;
 	};
 
 }

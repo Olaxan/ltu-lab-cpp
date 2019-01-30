@@ -22,7 +22,7 @@ int main() {
 
 	while (cout << "> " && getline(cin, input)) {
 
-		items = efiilj::GenUtils::split(input);
+		items = efiilj::GenUtils::Split(input);
 
 		if (items.size()) {
 
