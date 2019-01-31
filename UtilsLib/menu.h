@@ -35,13 +35,10 @@ namespace efiilj
 
 			bool Invoke() const;
 
-			//friend class Menu;
 		};
 
 		std::vector<MenuItem> _items;
 		bool _isSubmenu = false;
-
-		//friend class MenuItem;
 
 	public:
 		Menu(std::string title = "", std::string prompt = "> ");

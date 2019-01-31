@@ -30,6 +30,9 @@
     <ClInclude Include="utilslib_impl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="uinput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +57,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="toddutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uinput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

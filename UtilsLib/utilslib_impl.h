@@ -7,8 +7,6 @@
 #include <iostream>
 #include <sstream>
 
-using namespace std;
-
 namespace efiilj {
 
 	template <typename T>
@@ -18,29 +16,12 @@ namespace efiilj {
 		b = temp;
 	}
 
-	template <typename T>
-	bool IOUtils::Input(T &out, char exit, std::string prompt, int min, int max) {
-
-		static_assert(std::is_arithmetic<T>::value, "Type must be arithmetic");
-
-		stringstream err, ss;
-		string input, error;
+	template<typename T>
+	bool IOUtils::Input(T& out, bool exit, std::string prompt)
+	{
+		std::stringstream err, ss;
+		std::string input, error;
 		T test;
-
-		err << "\nPlease enter '" << typeid(T).name() << "'";
-		if (min != INT_MIN && max != INT_MAX)
-			err << " between " << min << " and " << max;
-		else if (min != INT_MIN)
-			err << " above " << min;
-		else if (max != INT_MAX)
-			err << " below " << max;
-
-		err << ".\n";
-
-		if (exit != '\0')
-			err << "'" << exit << "' to exit.\n";
-
-		error = err.str();
 
 		while (true) {
 
@@ -52,7 +33,7 @@ namespace efiilj {
 
 			if (input.length() > 0) {
 
-				if (input.length() == 1 && input[0] == exit)
+				if (input.length() == 1 && input[0] == '\0')
 					return false;
 
 				ss << input;
@@ -71,14 +52,63 @@ namespace efiilj {
 			cout << error << endl;
 		}
 	}
+	}
 
-	template <typename T>
-	bool IOUtils::Input(T &out, std::string prompt, int min, int max)
-	{
-		return Input<T>(out, '\0', prompt, min, max);
+	template <typename T, typename>
+	bool IOUtils::Input(T& out, bool exit, std::string prompt, int min, int max) {
+
+		static_assert(std::is_arithmetic<T>::value, "Type must be arithmetic");
+
+		std::stringstream err, ss;
+		std::string input, error;
+		T test;
+
+		err << "\nPlease enter '" << typeid(T).name() << "'";
+		if (min != INT_MIN && max != INT_MAX)
+			err << " between " << min << " and " << max;
+		else if (min != INT_MIN)
+			err << " above " << min;
+		else if (max != INT_MAX)
+			err << " below " << max;
+
+		err << ".\n";
+
+		if (exit)
+			err << "Ctrl + Z to exit.\n";
+
+		error = err.str();
+
+		while (true) {
+
+			ss.clear();
+			ss.str(std::string());
+
+			cout << prompt;
+			getline(cin, input);
+
+			if (input.length() > 0) {
+
+				if (input.length() == 1 && input[0] == '\0')
+					return false;
+
+				ss << input;
+				ss >> test;
+
+				if (isdigit(input[0])) {
+
+					if (test >= min && test <= max) {
+						out = test;
+						return true;
+					}
+
+				}
+			}
+
+			cout << error << endl;
+		}
 	}
 }
 
-extern UTILSLIB_API int nUtilsLib;
-
-UTILSLIB_API int fnUtilsLib(void);
+//extern UTILSLIB_API int nUtilsLib;
+//
+//UTILSLIB_API int fnUtilsLib(void);

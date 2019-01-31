@@ -90,7 +90,7 @@ int main() {
 			}
 			else if (items[0] == "todd" || items[0] == "itjustworks") {
 
-				efiilj::ToddUtils::CreateTodd();
+				efiilj::ToddUtils::Todd();
 
 			}
 			else if (items[0] == "quit") {

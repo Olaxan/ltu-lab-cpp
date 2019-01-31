@@ -154,6 +154,7 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="uinput.h" />
     <ClInclude Include="utilslib.h" />
     <ClInclude Include="utilslib_impl.h" />
   </ItemGroup>
@@ -171,6 +172,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="toddutils.cpp" />
+    <ClCompile Include="uinput.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

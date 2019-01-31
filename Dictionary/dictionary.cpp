@@ -72,7 +72,7 @@ int main() {
 			break;
 		}
 		case 4: {
-			efiilj::ToddUtils::CreateTodd();
+			efiilj::ToddUtils::Todd();
 			break;
 		}
 		default:
