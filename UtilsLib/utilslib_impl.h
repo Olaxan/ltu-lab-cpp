@@ -28,8 +28,8 @@ namespace efiilj {
 			ss.clear();
 			ss.str(std::string());
 
-			cout << prompt;
-			getline(cin, input);
+			std::cout << prompt;
+			std::getline(cin, input);
 
 			if (input.length() > 0) {
 
@@ -49,12 +49,11 @@ namespace efiilj {
 				}
 			}
 
-			cout << error << endl;
+			std::cout << error << endl;
 		}
 	}
-	}
 
-	template <typename T, typename>
+	template <typename T>
 	bool IOUtils::Input(T& out, bool exit, std::string prompt, int min, int max) {
 
 		static_assert(std::is_arithmetic<T>::value, "Type must be arithmetic");
@@ -83,7 +82,7 @@ namespace efiilj {
 			ss.clear();
 			ss.str(std::string());
 
-			cout << prompt;
+			std::cout << prompt;
 			getline(cin, input);
 
 			if (input.length() > 0) {
@@ -104,7 +103,7 @@ namespace efiilj {
 				}
 			}
 
-			cout << error << endl;
+			std::cout << error << endl;
 		}
 	}
 }

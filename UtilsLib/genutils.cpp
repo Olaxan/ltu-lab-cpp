@@ -9,7 +9,7 @@ using namespace std;
 
 namespace efiilj {
 
-	vector<string> GenUtils::Split(string input, string splitter) {
+	/*vector<string> GenUtils::Split(string input, string splitter) {
 
 		int index = input.find_first_of(splitter);
 		vector<string> split;
@@ -27,5 +27,5 @@ namespace efiilj {
 			split.push_back(input);
 
 		return split;
-	}
+	}*/
 }

@@ -1,11 +1,5 @@
 #pragma once
 
-#ifdef UTILSLIB_EXPORTS
-#define UTILSLIB_API __declspec(dllexport)
-#else
-#define UTILSLIB_API __declspec(dllimport)
-#endif
-
 #include "utilslib.h"
 
 #include <string>
